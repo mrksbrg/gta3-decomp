@@ -1,2 +1,4 @@
 sdk/* linguist-vendored
 vendor/* linguist-vendored
+# harness and mutation shell scripts must keep LF endings to run in Git Bash
+tools/**/*.sh text eol=lf

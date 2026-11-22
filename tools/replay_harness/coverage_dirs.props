@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Coverage build output folders, imported through ForceImportBeforeCppTargets so the
+     normal build output is never overwritten. See coverage_build.sh. -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)..\bin\coverage\</OutDir>
+    <IntDir>$(SolutionDir)obj-coverage\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+</Project>
