@@ -1,4 +1,5 @@
 #include "common.h"
+#include "harness.h"
 #include <time.h>
 #include "rpmatfx.h"
 #include "rphanim.h"
@@ -1615,6 +1616,11 @@ Idle(void *arg)
 	tbStartTimer(0, "DMAudio.Service");
 	DMAudio.Service();
 	tbEndTimer("DMAudio.Service");
+#endif
+
+#ifdef REPLAY_HARNESS
+	if (CHarness::IsActive())
+		CHarness::EndFrame();
 #endif
 
 	if(CGame::bDemoMode && CTimer::GetTimeInMilliseconds() > (3*60 + 30)*1000 && !CCutsceneMgr::IsCutsceneProcessing()){

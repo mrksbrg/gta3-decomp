@@ -1,5 +1,6 @@
 #define WITHWINDOWS
 #include "common.h"
+#include "harness.h"
 #include "crossplatform.h"
 
 #include "DMAudio.h"
@@ -260,6 +261,15 @@ void CTimer::Update(void)
 
 		dblUpdInMs = (double)updInMs;
 	}
+
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+	{
+		// fixed step: elapsed real time is replaced by a constant
+		dblUpdInMs = CHarness::GetFixedFrameMs();
+		frameTime = GetIsPaused() ? dblUpdInMs : dblUpdInMs * ms_fTimeScale;
+	}
+#endif
 
 	// count frames as if we're running at 30 fps
 	m_LogicalFramesPassed = 0;

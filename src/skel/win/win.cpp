@@ -41,6 +41,7 @@
 #define WITHD3D
 #define WITHDINPUT
 #include "common.h"
+#include "harness.h"
 #if (defined(_MSC_VER))
 #include <tchar.h>
 #endif /* (defined(_MSC_VER)) */
@@ -174,6 +175,10 @@ void _psCreateFolder(LPCSTR path)
  */
 const char *_psGetUserFilesFolder()
 {
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+		return CHarness::GetUserFilesFolder(); // never the player's own savegames
+#endif
 #ifdef USE_MY_DOCUMENTS
 	HKEY hKey = NULL;
 
@@ -300,6 +305,9 @@ psMouseSetPos(RwV2d *pos)
 
 	ClientToScreen(PSGLOBAL(window), &point);
 
+#ifdef REPLAY_HARNESS
+	if ( !CHarness::IsActive() ) // the game re-centres the cursor every frame; leave the user's mouse alone
+#endif
 	SetCursorPos(point.x, point.y);
 	
 	PSGLOBAL(lastMousePos.x) = (RwInt32)pos->x;
@@ -873,6 +881,10 @@ RwChar **_psGetVideoModeList()
  */
 void _psSelectScreenVM(RwInt32 videoMode)
 {
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+		return; // the menu may change the preference, but the harness window stays as it is
+#endif
 	RwTexDictionarySetCurrent( nil );
 	
 	FrontEndMenuManager.UnloadTextures();
@@ -969,6 +981,10 @@ MainWndProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		case WM_SETCURSOR:
 		{
+#ifdef REPLAY_HARNESS
+			if ( CHarness::IsActive() )
+				break; // keep the normal cursor over the harness window
+#endif
 			ShowCursor(FALSE);
 			
 			SetCursor(nil);
@@ -1075,6 +1091,10 @@ MainWndProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 		{
 			points = MAKEPOINTS(lParam);
 
+#ifdef REPLAY_HARNESS
+			if ( CHarness::IsActive() )
+				return 0L; // a real mouse over the window must not steer the menu
+#endif
 			FrontEndMenuManager.m_nMouseTempPosX = points.x;
 			FrontEndMenuManager.m_nMouseTempPosY = points.y;
 
@@ -1171,6 +1191,10 @@ MainWndProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 
 		case WM_ACTIVATEAPP:
 		{
+#ifdef REPLAY_HARNESS
+			if ( CHarness::IsActive() )
+				return 0L; // focus changes are the user's, not the run's: no pad clearing
+#endif
 			switch ( gGameState )
 			{
 				case GS_LOGO_MPEG:
@@ -1624,9 +1648,14 @@ psSelectDevice()
 		int spaceY = GetSystemMetrics(SM_CYSCREEN) - (rect.bottom-rect.top);
 
 		SetWindowLong(PSGLOBAL(window), GWL_STYLE, WS_VISIBLE | WS_OVERLAPPEDWINDOW);
+		UINT swpFlags = 0;
+#ifdef REPLAY_HARNESS
+		if ( CHarness::IsActive() )
+			swpFlags = SWP_NOACTIVATE; // do not take focus
+#endif
 		SetWindowPos(PSGLOBAL(window), HWND_NOTOPMOST, spaceX/2, spaceY/2,
 			(rect.right - rect.left),
-			(rect.bottom - rect.top), 0);
+			(rect.bottom - rect.top), swpFlags);
 
 		// Have to get actual size because the window perhaps didn't fit
 		GetClientRect(PSGLOBAL(window), &rect);
@@ -2018,6 +2047,16 @@ WinMain(HINSTANCE instance,
 	RwV2d pos;
 	RwInt32 argc, i;
 	RwChar **argv;
+#ifdef REPLAY_HARNESS
+	// Harness runs leave the user's system settings alone. These calls broadcast to every
+	// window and wait (SPIF_SENDCHANGE), so several harness instances starting or exiting
+	// at once deadlock each other; a killed instance would also never restore them.
+	// (Checked on the raw command line: it is parsed only later.)
+	const bool harnessRun = strstr(cmdLine, "-harness") != nil;
+#else
+	const bool harnessRun = false;
+#endif
+	if ( !harnessRun )
 	SystemParametersInfo(SPI_SETFOREGROUNDLOCKTIMEOUT, 0, nil, SPIF_SENDCHANGE);
 
 #ifndef MASTER
@@ -2136,26 +2175,31 @@ WinMain(HINSTANCE instance,
 		RsEventHandler(rsCAMERASIZE, &r);
 	}
 	
+	STICKYKEYS SavedStickyKeys;
+	SavedStickyKeys.cbSize = sizeof(STICKYKEYS);
+	if ( !harnessRun )
+	{
 	SystemParametersInfo(SPI_SETSCREENSAVEACTIVE, FALSE, nil, SPIF_SENDCHANGE);
 	SystemParametersInfo(SPI_SETPOWEROFFACTIVE, FALSE, nil, SPIF_SENDCHANGE);
 	SystemParametersInfo(SPI_SETLOWPOWERACTIVE, FALSE, nil, SPIF_SENDCHANGE);
-	
 
-	STICKYKEYS SavedStickyKeys;
-	SavedStickyKeys.cbSize = sizeof(STICKYKEYS);
-	
 	SystemParametersInfo(SPI_GETSTICKYKEYS, sizeof(STICKYKEYS), &SavedStickyKeys, SPIF_SENDCHANGE);
-	
+
 	STICKYKEYS NewStickyKeys;
 	NewStickyKeys.cbSize = sizeof(STICKYKEYS);
 	NewStickyKeys.dwFlags = SKF_TWOKEYSOFF;
-	
+
 	SystemParametersInfo(SPI_SETSTICKYKEYS, sizeof(STICKYKEYS), &NewStickyKeys, SPIF_SENDCHANGE);
+	}
 	
 
 	/*
 	 * Show the window, and refresh it...
 	 */
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+		cmdShow = SW_SHOWNOACTIVATE; // do not take focus from whatever the user is doing
+#endif
 	ShowWindow(PSGLOBAL(window), cmdShow);
 	UpdateWindow(PSGLOBAL(window));
 	
@@ -2396,7 +2440,23 @@ WinMain(HINSTANCE instance,
 					case GS_INIT_FRONTEND:
 					{
 						LoadingScreen(nil, nil, "loadsc0");
-						
+
+#ifdef REPLAY_HARNESS
+						if ( CHarness::IsActive() )
+						{
+							// no menu: straight into a new game, or into the requested save
+							if ( CHarness::PrepareStart() )
+							{
+								InitialiseGame();
+								FrontEndMenuManager.m_bGameNotLoaded = false;
+								gGameState = GS_PLAYING_GAME;
+							}
+							else
+								gGameState = GS_INIT_PLAYING_GAME;
+							break;
+						}
+#endif
+
 						FrontEndMenuManager.m_bGameNotLoaded = true;
 						
 						CMenuManager::m_bStartUpFrontEndRequested = true;
@@ -2623,10 +2683,13 @@ WinMain(HINSTANCE instance,
 	
 	ShowCursor(TRUE);
 	
+	if ( !harnessRun )
+	{
 	SystemParametersInfo(SPI_SETSTICKYKEYS, sizeof(STICKYKEYS), &SavedStickyKeys, SPIF_SENDCHANGE);
 	SystemParametersInfo(SPI_SETPOWEROFFACTIVE, TRUE, nil, SPIF_SENDCHANGE);
 	SystemParametersInfo(SPI_SETLOWPOWERACTIVE, TRUE, nil, SPIF_SENDCHANGE);
 	SystemParametersInfo(SPI_SETSCREENSAVEACTIVE, TRUE, nil, SPIF_SENDCHANGE);
+	}
 
 	SetErrorMode(0);
 

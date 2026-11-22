@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Coverage build of re3 with MSYS2's clang-cl (source-based LLVM coverage).
+  Imported through MSBuild's ForceImportAfterCppTargets; see coverage_build.sh.
+  ClangRtDir is passed on the command line: a folder holding the LLVM profile runtime
+  renamed to clang_rt.profile.lib, the name clang-cl's objects ask the linker for.
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) -fprofile-instr-generate -fcoverage-mapping -Wno-everything</AdditionalOptions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);clang_rt.profile.lib;$(ClangRtDir)\clang_rt_msvc_shim.obj</AdditionalDependencies>
+      <AdditionalOptions>%(AdditionalOptions) /alternatename:___chkstk_ms=__chkstk /OPT:NOICF</AdditionalOptions>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(ClangRtDir)</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+    </Lib>
+  </ItemDefinitionGroup>
+</Project>

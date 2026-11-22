@@ -1,4 +1,5 @@
 #include "common.h"
+#include "harness.h"
 #include "platform.h"
 
 #include "Game.h"
@@ -400,6 +401,10 @@ bool CGame::Initialise(const char* datFile)
 {
 #ifdef GTA_PS2
 	// TODO: upload VU0 collision code here
+#endif
+#ifdef REPLAY_HARNESS
+	if (CHarness::IsActive())
+		CHarness::OnGameInitialise();
 #endif
 
 #if GTA_VERSION > GTA3_PS2_160
@@ -1029,6 +1034,10 @@ void CGame::Process(void)
 	POP_MEMID();
 
 	CStreaming::Update();
+#ifdef REPLAY_HARNESS
+	if (CHarness::IsActive())
+		CHarness::AfterStreamingUpdate();
+#endif
 	if (!CTimer::GetIsPaused())
 	{
 		CTheZones::Update();

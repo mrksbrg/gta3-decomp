@@ -47,6 +47,7 @@
 #include "MusicManager.h"
 #include "Frontend.h"
 #include "Timer.h"
+#include "harness.h"
 #ifdef AUDIO_OAL_USE_OPUS
 #include <opusfile.h>
 #endif
@@ -106,6 +107,34 @@ CChannel aChannel[NUM_CHANNELS];
 uint8 nChannelVolume[NUM_CHANNELS];
 
 uint32 nStreamLength[TOTAL_STREAMED_SOUNDS];
+
+#ifdef REPLAY_HARNESS
+// Harness mode: whether a stream or a sample channel is still playing is
+// decided by game time and the file length, not by the sound card, so mission script
+// waits on audio give the same result on every run. Real playback is unchanged.
+static uint8 harnessStreamFile[MAX_STREAMS];
+static bool harnessStreamPlaying[MAX_STREAMS];
+static uint32 harnessStreamEnd[MAX_STREAMS];
+static uint32 harnessChanSfx[NUM_CHANNELS];
+static uint32 harnessChanFreq[NUM_CHANNELS];
+static uint32 harnessChanLoops[NUM_CHANNELS];
+static bool harnessChanPlaying[NUM_CHANNELS];
+static uint32 harnessChanEnd[NUM_CHANNELS];
+
+static void
+HarnessStartStream(uint8 nStream, uint8 nFile, uint32 nPos)
+{
+	uint32 len = nFile < TOTAL_STREAMED_SOUNDS ? nStreamLength[nFile] : 0;
+	harnessStreamPlaying[nStream] = true;
+	harnessStreamEnd[nStream] = CTimer::GetTimeInMilliseconds() + (len > nPos ? len - nPos : 0);
+}
+
+static bool
+HarnessStillPlaying(bool playing, uint32 end)
+{
+	return playing && (int32)(end - CTimer::GetTimeInMilliseconds()) > 0;
+}
+#endif
 ALuint ALStreamSources[MAX_STREAMS][2];
 ALuint ALStreamBuffers[MAX_STREAMS][NUM_STREAMBUFFERS];
 
@@ -1450,6 +1479,11 @@ cSampleManager::InitialiseChannel(uint32 nChannel, uint32 nSfx, uint8 nBank)
 {
 	ASSERT( nChannel < NUM_CHANNELS );
 	
+#ifdef REPLAY_HARNESS
+	harnessChanSfx[nChannel] = nSfx;
+	harnessChanFreq[nChannel] = 0;
+	harnessChanLoops[nChannel] = 1;
+#endif
 	uintptr addr;
 	
 	if ( nSfx < SAMPLEBANK_MAX )
@@ -1578,6 +1612,10 @@ cSampleManager::SetChannelFrequency(uint32 nChannel, uint32 nFreq)
 	ASSERT( nChannel < NUM_CHANNELS );
 	
 	aChannel[nChannel].SetCurrentFreq(nFreq);
+#ifdef REPLAY_HARNESS
+	if ( nFreq != 0 && !harnessChanPlaying[nChannel] )
+		harnessChanFreq[nChannel] = nFreq; // the rate at start decides the emulated length
+#endif
 }
 
 void
@@ -1594,6 +1632,9 @@ cSampleManager::SetChannelLoopCount(uint32 nChannel, uint32 nLoopCount)
 	ASSERT( nChannel < NUM_CHANNELS );
 	
 	aChannel[nChannel].SetLoopCount(nLoopCount);
+#ifdef REPLAY_HARNESS
+	harnessChanLoops[nChannel] = nLoopCount;
+#endif
 }
 
 bool8
@@ -1601,6 +1642,14 @@ cSampleManager::GetChannelUsedFlag(uint32 nChannel)
 {
 	ASSERT( nChannel < NUM_CHANNELS );
 	
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+	{
+		if ( harnessChanPlaying[nChannel] && harnessChanLoops[nChannel] == 0 )
+			return TRUE; // loops until stopped
+		return HarnessStillPlaying(harnessChanPlaying[nChannel], harnessChanEnd[nChannel]);
+	}
+#endif
 	return aChannel[nChannel].IsUsed();
 }
 
@@ -1610,6 +1659,16 @@ cSampleManager::StartChannel(uint32 nChannel)
 	ASSERT( nChannel < NUM_CHANNELS );
 	
 	aChannel[nChannel].Start();
+#ifdef REPLAY_HARNESS
+	if ( harnessChanSfx[nChannel] < TOTAL_AUDIO_SAMPLES )
+	{
+		uint32 sfx = harnessChanSfx[nChannel];
+		uint32 freq = harnessChanFreq[nChannel] ? harnessChanFreq[nChannel] : GetSampleBaseFrequency(sfx);
+		uint32 loops = harnessChanLoops[nChannel] ? harnessChanLoops[nChannel] : 1;
+		harnessChanPlaying[nChannel] = true;
+		harnessChanEnd[nChannel] = CTimer::GetTimeInMilliseconds() + (freq ? (uint32)((uint64)GetSampleLength(sfx) * 1000 * loops / freq) : 0);
+	}
+#endif
 }
 
 void
@@ -1618,12 +1677,19 @@ cSampleManager::StopChannel(uint32 nChannel)
 	ASSERT( nChannel < NUM_CHANNELS );
 	
 	aChannel[nChannel].Stop();
+#ifdef REPLAY_HARNESS
+	harnessChanPlaying[nChannel] = false;
+#endif
 }
 
 void
 cSampleManager::PreloadStreamedFile(uint8 nFile, uint8 nStream)
 {
 	ASSERT( nStream < MAX_STREAMS );
+#ifdef REPLAY_HARNESS
+	harnessStreamFile[nStream] = nFile;
+	harnessStreamPlaying[nStream] = false;
+#endif
 
 	if ( nFile < TOTAL_STREAMED_SOUNDS )
 	{
@@ -1666,6 +1732,9 @@ cSampleManager::StartPreloadedStreamedFile(uint8 nStream)
 	{
 		stream->Start();
 	}
+#ifdef REPLAY_HARNESS
+	HarnessStartStream(nStream, harnessStreamFile[nStream], 0);
+#endif
 }
 
 bool8
@@ -1677,6 +1746,11 @@ cSampleManager::StartStreamedFile(uint8 nFile, uint32 nPos, uint8 nStream)
 
 	if ( nFile >= TOTAL_STREAMED_SOUNDS )
 		return FALSE;
+
+#ifdef REPLAY_HARNESS
+	harnessStreamFile[nStream] = nFile;
+	HarnessStartStream(nStream, nFile, nPos);
+#endif
 
 	aStream[nStream]->Close();
 
@@ -1821,6 +1895,9 @@ cSampleManager::StopStreamedFile(uint8 nStream)
 
 	if ( nStream == 0 )
 		_bIsMp3Active = FALSE;
+#ifdef REPLAY_HARNESS
+	harnessStreamPlaying[nStream] = false;
+#endif
 }
 
 int32
@@ -1892,6 +1969,10 @@ cSampleManager::IsStreamPlaying(uint8 nStream)
 {
 	ASSERT( nStream < MAX_STREAMS );
 	
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+		return HarnessStillPlaying(harnessStreamPlaying[nStream], harnessStreamEnd[nStream]);
+#endif
 	CStream *stream = aStream[nStream];
 	
 	if ( stream->IsOpened() )

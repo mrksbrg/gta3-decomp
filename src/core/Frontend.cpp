@@ -2,6 +2,7 @@
 #define WITHWINDOWS
 #define WITHDINPUT
 #include "common.h"
+#include "harness.h"
 #ifndef PS2_MENU
 #include "crossplatform.h"
 #include "platform.h"
@@ -3820,6 +3821,9 @@ CMenuManager::LoadSettings()
 	if (LoadINISettings()) {
 		LoadINIControllerSettings();
 	}
+#endif
+#ifdef REPLAY_HARNESS
+	CHarness::ApplySettingsOverrides();
 #endif
 
 	m_PrefsVsync = m_PrefsVsyncDisp;

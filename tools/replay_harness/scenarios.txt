@@ -1,0 +1,21 @@
+# One scenario per line (see -harness-scenario in src/extras/harness.h).
+# "newgame" means no scenario: a new game with the story script.
+newgame
+freeroam,armed,wanted=3
+freeroam,car=taxi
+freeroam,at=staunton,armed,wanted=5
+freeroam,at=shoreside,car=police,hour=22,weather=rain
+freeroam,at=staunton,car=rhino,wanted=6
+freeroam,at=portland,armed,hour=2,weather=fog
+freeroam,menu
+menu
+freeroam,boat=predator
+freeroam,at=staunton,boat=reefer,hour=20
+freeroam,at=shoreside,car=dodo
+freeroam,car=firetruk,wanted=2
+freeroam,armed,weapon=sniper
+freeroam,armed,weapon=rocket,wanted=2
+freeroam,controls=classic,car=taxi
+freeroam,freecam,car=police
+freeroam,car=taxi,inwater
+freeroam,car=police,flip

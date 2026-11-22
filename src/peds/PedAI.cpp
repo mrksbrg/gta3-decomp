@@ -1,4 +1,5 @@
 #include "common.h"
+#include "harness.h"
 
 #include "main.h"
 #include "Particle.h"
@@ -4232,6 +4233,13 @@ void
 CPed::GoToNearestDoor(CVehicle *veh)
 {
 	CVector posToOpen;
+#ifdef REPLAY_HARNESS
+	// GetNearestDoor leaves posToOpen unset when neither front door has room, so the
+	// ped seeks leftover stack memory. Harness mode zeroes it to stay deterministic;
+	// normal play keeps the original behaviour.
+	if (CHarness::IsActive())
+		posToOpen = CVector(0.0f, 0.0f, 0.0f);
+#endif
 	GetNearestDoor(veh, posToOpen);
 	SetSeek(posToOpen, 0.5f);
 	SetMoveState(PEDMOVE_RUN);
