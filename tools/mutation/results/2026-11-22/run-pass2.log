@@ -1,0 +1,795 @@
+src/audio/AudioLogic.cpp: 1862 mutants, 300 sampled
+src/peds/Ped.cpp: 2312 mutants, 300 sampled
+src/peds/PedAI.cpp: 1437 mutants, 300 sampled
+src/vehicles/Automobile.cpp: 2068 mutants, 300 sampled
+src/control/CarCtrl.cpp: 1190 mutants, 300 sampled
+src/core/Cam.cpp: 1970 mutants, 300 sampled
+src/core/Frontend.cpp: 1511 mutants, 300 sampled
+493 survivors of build/mutation/night/results.jsonl
+36 baseline runs ready
+493 mutants to run (0 already done)
+[1/493] survived src/control/CarCtrl.cpp:827 cxx_mul_to_div ->  (20s)
+[2/493] survived src/peds/Ped.cpp:3505 cxx_lt_to_le ->  (21s)
+[3/493] survived src/peds/PedAI.cpp:2668 cxx_eq_to_ne ->  (22s)
+[4/493] survived src/core/Frontend.cpp:5315 cxx_sub_to_add ->  (14s)
+[5/493] survived src/peds/Ped.cpp:4023 cxx_eq_to_ne ->  (21s)
+[6/493] survived src/control/CarCtrl.cpp:1278 cxx_remove_void_call ->  (21s)
+[7/493] survived src/core/Cam.cpp:3308 cxx_add_to_sub ->  (17s)
+[8/493] survived src/peds/Ped.cpp:1647 cxx_gt_to_ge -> no further covering runs (0s)
+[9/493] survived src/control/CarCtrl.cpp:2191 cxx_eq_to_ne -> no further covering runs (0s)
+[10/493] survived src/peds/PedAI.cpp:2031 cxx_lt_to_le ->  (20s)
+[11/493] killed src/vehicles/Automobile.cpp:1026 cxx_eq_to_ne -> s2 seed 1: diverged:255 (5s)
+[12/493] survived src/control/CarCtrl.cpp:1099 cxx_sub_to_add ->  (20s)
+[13/493] survived src/peds/Ped.cpp:1858 cxx_le_to_lt ->  (21s)
+[14/493] survived src/peds/Ped.cpp:7324 cxx_eq_to_ne ->  (9s)
+[15/493] survived src/control/CarCtrl.cpp:915 cxx_remove_void_call ->  (20s)
+[16/493] survived src/core/Cam.cpp:3618 cxx_remove_void_call ->  (14s)
+[17/493] survived src/peds/PedAI.cpp:4280 cxx_gt_to_ge ->  (21s)
+[18/493] killed src/vehicles/Automobile.cpp:982 cxx_lt_to_le -> s2 seed 1: diverged:255 (5s)
+[19/493] survived src/peds/Ped.cpp:2566 cxx_add_to_sub ->  (21s)
+[20/493] survived src/control/CarCtrl.cpp:1838 cxx_add_to_sub ->  (20s)
+[21/493] survived src/peds/Ped.cpp:7182 cxx_ge_to_gt ->  (22s)
+[22/493] survived src/vehicles/Automobile.cpp:588 cxx_remove_void_call ->  (21s)
+[23/493] survived src/control/CarCtrl.cpp:1021 cxx_lt_to_le ->  (20s)
+[24/493] survived src/peds/Ped.cpp:2461 cxx_le_to_gt ->  (21s)
+[25/493] survived src/control/CarCtrl.cpp:2292 cxx_gt_to_ge ->  (20s)
+[26/493] survived src/peds/Ped.cpp:2410 cxx_eq_to_ne -> no further covering runs (0s)
+[27/493] survived src/peds/PedAI.cpp:3518 cxx_eq_to_ne ->  (21s)
+[28/493] survived src/core/Frontend.cpp:5716 cxx_remove_void_call ->  (13s)
+[29/493] killed src/peds/PedAI.cpp:3508 cxx_remove_void_call -> s2 seed 2: diverged:639 (6s)
+[30/493] survived src/audio/AudioLogic.cpp:975 cxx_gt_to_le ->  (21s)
+[31/493] killed src/peds/Ped.cpp:3665 cxx_gt_to_le -> s3 seed 2: diverged:2171 (8s)
+[32/493] survived src/peds/PedAI.cpp:206 cxx_eq_to_ne ->  (19s)
+[33/493] survived src/vehicles/Automobile.cpp:1366 cxx_gt_to_ge ->  (22s)
+[34/493] survived src/vehicles/Automobile.cpp:1140 cxx_eq_to_ne ->  (20s)
+[35/493] survived src/control/CarCtrl.cpp:927 cxx_remove_void_call ->  (21s)
+[36/493] killed src/peds/Ped.cpp:6954 cxx_lt_to_ge -> s2 seed 1: diverged:255 (5s)
+[37/493] survived src/vehicles/Automobile.cpp:2103 cxx_remove_void_call -> no further covering runs (0s)
+[38/493] killed src/control/CarCtrl.cpp:122 cxx_add_to_sub -> s2 seed 1: diverged:765 (6s)
+[39/493] survived src/peds/Ped.cpp:5335 cxx_gt_to_ge ->  (21s)
+[40/493] killed src/audio/AudioLogic.cpp:2025 cxx_gt_to_le -> s2 seed 3: diverged:866 (12s)
+[41/493] survived src/vehicles/Automobile.cpp:1902 cxx_add_to_sub ->  (22s)
+[42/493] survived src/control/CarCtrl.cpp:2519 cxx_lt_to_le ->  (22s)
+[43/493] survived src/core/Frontend.cpp:5789 cxx_ne_to_eq ->  (15s)
+[44/493] survived src/peds/PedAI.cpp:1377 cxx_lt_to_le ->  (19s)
+[45/493] survived src/control/CarCtrl.cpp:1102 cxx_ne_to_eq ->  (20s)
+[46/493] survived src/peds/Ped.cpp:7136 cxx_le_to_lt ->  (20s)
+[47/493] killed src/audio/AudioLogic.cpp:6437 cxx_post_inc_to_post_dec -> s2 seed 1: diverged:255 (5s)
+[48/493] survived src/control/CarCtrl.cpp:2639 cxx_lt_to_le ->  (20s)
+[49/493] survived src/vehicles/Automobile.cpp:1984 cxx_remove_void_call ->  (20s)
+[50/493] survived src/core/Cam.cpp:594 cxx_eq_to_ne ->  (21s)
+[51/493] survived src/audio/AudioLogic.cpp:351 cxx_remove_void_call ->  (21s)
+[52/493] survived src/control/CarCtrl.cpp:1293 cxx_lt_to_le ->  (20s)
+[53/493] survived src/peds/Ped.cpp:752 cxx_lt_to_le ->  (20s)
+[54/493] survived src/peds/Ped.cpp:1513 cxx_mul_to_div ->  (18s)
+[55/493] survived src/peds/PedAI.cpp:3523 cxx_remove_void_call ->  (22s)
+[56/493] survived src/core/Frontend.cpp:5307 cxx_lt_to_ge ->  (15s)
+[57/493] killed src/peds/Ped.cpp:2075 cxx_gt_to_le -> s3 seed 2: diverged:1854 (8s)
+[58/493] killed src/vehicles/Automobile.cpp:1633 cxx_gt_to_le -> s2 seed 1: diverged:400 (5s)
+[59/493] survived src/core/Cam.cpp:2181 cxx_lt_to_le ->  (21s)
+[60/493] survived src/peds/Ped.cpp:7324 cxx_eq_to_ne ->  (10s)
+[61/493] survived src/audio/AudioLogic.cpp:2831 cxx_lt_to_le -> no further covering runs (0s)
+[62/493] survived src/control/CarCtrl.cpp:322 cxx_gt_to_ge ->  (21s)
+[63/493] survived src/peds/Ped.cpp:4645 cxx_eq_to_ne ->  (21s)
+[64/493] survived src/core/Cam.cpp:408 cxx_lt_to_ge ->  (21s)
+[65/493] survived src/audio/AudioLogic.cpp:2712 cxx_div_to_mul -> no further covering runs (0s)
+[66/493] killed src/vehicles/Automobile.cpp:840 cxx_gt_to_le -> s2 seed 3: diverged:1004 (6s)
+[67/493] killed src/control/CarCtrl.cpp:1320 cxx_eq_to_ne -> s3 seed 2: diverged:1587 (12s)
+[68/493] survived src/audio/AudioLogic.cpp:418 cxx_post_inc_to_post_dec ->  (20s)
+[69/493] survived src/control/CarCtrl.cpp:988 cxx_add_to_sub ->  (21s)
+[70/493] survived src/core/Cam.cpp:2384 cxx_le_to_lt ->  (21s)
+[71/493] killed src/audio/AudioLogic.cpp:387 cxx_rem_to_div -> s2 seed 1: diverged:524 (6s)
+[72/493] survived src/core/Frontend.cpp:452 cxx_eq_to_ne ->  (15s)
+[73/493] killed src/vehicles/Automobile.cpp:4130 cxx_add_to_sub -> s2 seed 1: diverged:1 (5s)
+[74/493] survived src/control/CarCtrl.cpp:1914 cxx_add_to_sub -> no further covering runs (0s)
+[75/493] survived src/audio/AudioLogic.cpp:335 cxx_remove_void_call ->  (20s)
+[76/493] killed src/vehicles/Automobile.cpp:712 cxx_eq_to_ne -> s2 seed 1: diverged:333 (5s)
+[77/493] survived src/audio/AudioLogic.cpp:3065 cxx_lt_to_le -> no further covering runs (0s)
+[78/493] survived src/vehicles/Automobile.cpp:1154 cxx_gt_to_le ->  (20s)
+[79/493] survived src/core/Cam.cpp:3346 cxx_mul_to_div ->  (17s)
+[80/493] survived src/control/CarCtrl.cpp:1918 cxx_add_to_sub -> no further covering runs (0s)
+[81/493] killed src/vehicles/Automobile.cpp:1744 cxx_mul_to_div -> s4 seed 3: diverged:1889 (7s)
+[82/493] survived src/control/CarCtrl.cpp:1930 cxx_mul_to_div -> no further covering runs (0s)
+[83/493] survived src/audio/AudioLogic.cpp:454 cxx_remove_void_call ->  (14s)
+[84/493] survived src/control/CarCtrl.cpp:555 cxx_mul_to_div ->  (20s)
+[85/493] killed src/core/Cam.cpp:1666 cxx_ne_to_eq -> s2 seed 1: diverged:0 (4s)
+[86/493] survived src/peds/Ped.cpp:3094 cxx_ge_to_gt ->  (21s)
+[87/493] survived src/audio/AudioLogic.cpp:2063 cxx_gt_to_ge -> no further covering runs (0s)
+[88/493] survived src/peds/Ped.cpp:1717 cxx_ge_to_lt ->  (20s)
+[89/493] killed src/vehicles/Automobile.cpp:2226 cxx_gt_to_le -> s2 seed 1: diverged:422 (5s)
+[90/493] survived src/core/Frontend.cpp:1069 cxx_remove_void_call ->  (15s)
+[91/493] survived src/vehicles/Automobile.cpp:3260 cxx_eq_to_ne ->  (22s)
+[92/493] survived src/control/CarCtrl.cpp:1834 cxx_mul_to_div ->  (20s)
+[93/493] survived src/peds/PedAI.cpp:3778 cxx_eq_to_ne ->  (21s)
+[94/493] survived src/vehicles/Automobile.cpp:3252 cxx_gt_to_ge ->  (20s)
+[95/493] survived src/control/CarCtrl.cpp:2664 cxx_add_to_sub ->  (20s)
+[96/493] survived src/peds/PedAI.cpp:311 cxx_eq_to_ne ->  (13s)
+[97/493] survived src/vehicles/Automobile.cpp:1144 cxx_lt_to_le -> no further covering runs (0s)
+[98/493] survived src/audio/AudioLogic.cpp:1819 cxx_gt_to_ge ->  (21s)
+[99/493] survived src/control/CarCtrl.cpp:127 cxx_lt_to_le ->  (20s)
+[100/493] survived src/peds/Ped.cpp:6947 cxx_ge_to_gt ->  (20s)
+[101/493] survived src/vehicles/Automobile.cpp:2071 cxx_remove_void_call -> no further covering runs (0s)
+[102/493] survived src/peds/Ped.cpp:4617 cxx_eq_to_ne ->  (18s)
+[103/493] survived src/vehicles/Automobile.cpp:2051 cxx_remove_void_call -> no further covering runs (0s)
+[104/493] survived src/peds/Ped.cpp:4896 cxx_le_to_lt -> no further covering runs (0s)
+[105/493] survived src/vehicles/Automobile.cpp:1160 cxx_mul_to_div ->  (22s)
+[106/493] survived src/vehicles/Automobile.cpp:4531 cxx_gt_to_ge ->  (20s)
+[107/493] killed src/control/CarCtrl.cpp:965 cxx_le_to_gt -> s2 seed 1: diverged:1247 (6s)
+[108/493] survived src/peds/Ped.cpp:5040 cxx_ne_to_eq ->  (20s)
+[109/493] survived src/vehicles/Automobile.cpp:2117 cxx_remove_void_call ->  (21s)
+[110/493] survived src/control/CarCtrl.cpp:1671 cxx_lt_to_le ->  (20s)
+[111/493] survived src/peds/PedAI.cpp:5038 cxx_minus_to_noop ->  (18s)
+[112/493] survived src/vehicles/Automobile.cpp:2284 cxx_mul_to_div ->  (21s)
+[113/493] survived src/core/Cam.cpp:3623 cxx_sub_to_add ->  (15s)
+[114/493] survived src/vehicles/Automobile.cpp:869 cxx_gt_to_ge ->  (21s)
+[115/493] survived src/control/CarCtrl.cpp:2278 cxx_mul_to_div ->  (20s)
+[116/493] survived src/control/CarCtrl.cpp:1194 cxx_gt_to_ge ->  (20s)
+[117/493] killed src/peds/Ped.cpp:4132 cxx_ne_to_eq -> s2 seed 1: diverged:2245 (8s)
+[118/493] survived src/peds/PedAI.cpp:3571 cxx_gt_to_ge ->  (22s)
+[119/493] survived src/vehicles/Automobile.cpp:3281 cxx_lt_to_le ->  (22s)
+[120/493] survived src/core/Cam.cpp:1654 cxx_lt_to_le ->  (20s)
+[121/493] survived src/core/Frontend.cpp:3611 cxx_remove_void_call ->  (15s)
+[122/493] survived src/peds/Ped.cpp:5639 cxx_remove_void_call ->  (22s)
+[123/493] survived src/peds/PedAI.cpp:3689 cxx_remove_void_call ->  (17s)
+[124/493] survived src/control/CarCtrl.cpp:1417 cxx_gt_to_ge ->  (21s)
+[125/493] survived src/peds/PedAI.cpp:3447 cxx_le_to_lt ->  (10s)
+[126/493] survived src/control/CarCtrl.cpp:2686 cxx_eq_to_ne ->  (20s)
+[127/493] killed src/peds/Ped.cpp:2768 cxx_lt_to_ge -> s3 seed 2: diverged:958 (6s)
+[128/493] killed src/control/CarCtrl.cpp:120 cxx_ge_to_gt -> s2 seed 3: diverged:581 (17s)
+[129/493] killed src/control/CarCtrl.cpp:273 cxx_remove_void_call -> s2 seed 1: diverged:1 (4s)
+[130/493] survived src/peds/PedAI.cpp:700 cxx_ne_to_eq ->  (20s)
+[131/493] survived src/audio/AudioLogic.cpp:960 cxx_remove_void_call -> no further covering runs (0s)
+[132/493] survived src/vehicles/Automobile.cpp:1898 cxx_mul_to_div ->  (22s)
+[133/493] survived src/control/CarCtrl.cpp:1417 cxx_lt_to_le ->  (20s)
+[134/493] survived src/core/Cam.cpp:3348 cxx_add_to_sub ->  (17s)
+[135/493] survived src/vehicles/Automobile.cpp:1526 cxx_lt_to_le ->  (21s)
+[136/493] survived src/control/CarCtrl.cpp:2519 cxx_lt_to_ge ->  (22s)
+[137/493] killed src/peds/Ped.cpp:310 cxx_remove_void_call -> s2 seed 1: diverged:526 (5s)
+[138/493] survived src/core/Cam.cpp:4210 cxx_mul_to_div ->  (21s)
+[139/493] survived src/audio/AudioLogic.cpp:6579 cxx_lt_to_le ->  (21s)
+[140/493] survived src/control/CarCtrl.cpp:2809 cxx_pre_inc_to_pre_dec ->  (20s)
+[141/493] survived src/core/Cam.cpp:1532 cxx_mul_to_div ->  (20s)
+[142/493] survived src/vehicles/Automobile.cpp:4625 cxx_eq_to_ne ->  (22s)
+[143/493] survived src/peds/Ped.cpp:5740 cxx_lt_to_le ->  (22s)
+[144/493] survived src/vehicles/Automobile.cpp:635 cxx_eq_to_ne ->  (21s)
+[145/493] survived src/core/Frontend.cpp:3739 cxx_remove_void_call ->  (15s)
+[146/493] survived src/peds/Ped.cpp:6026 cxx_remove_void_call ->  (21s)
+[147/493] survived src/control/CarCtrl.cpp:1766 cxx_sub_to_add ->  (21s)
+[148/493] survived src/core/Frontend.cpp:3603 cxx_gt_to_ge ->  (15s)
+[149/493] survived src/vehicles/Automobile.cpp:3731 cxx_gt_to_ge -> no further covering runs (0s)
+[150/493] survived src/control/CarCtrl.cpp:138 cxx_ge_to_gt ->  (21s)
+[151/493] survived src/peds/Ped.cpp:4048 cxx_ne_to_eq ->  (21s)
+[152/493] survived src/vehicles/Automobile.cpp:4547 cxx_gt_to_ge ->  (21s)
+[153/493] survived src/audio/AudioLogic.cpp:559 cxx_remove_void_call ->  (20s)
+[154/493] survived src/control/CarCtrl.cpp:2823 cxx_lt_to_le ->  (20s)
+[155/493] survived src/peds/PedAI.cpp:4083 cxx_gt_to_ge ->  (22s)
+[156/493] survived src/control/CarCtrl.cpp:1952 cxx_lt_to_ge ->  (20s)
+[157/493] survived src/peds/PedAI.cpp:726 cxx_remove_void_call ->  (20s)
+[158/493] survived src/vehicles/Automobile.cpp:2034 cxx_remove_void_call ->  (21s)
+[159/493] survived src/peds/PedAI.cpp:3494 cxx_le_to_lt ->  (21s)
+[160/493] killed src/vehicles/Automobile.cpp:1088 cxx_ne_to_eq -> s2 seed 1: diverged:250 (5s)
+[161/493] survived src/peds/Ped.cpp:8194 cxx_eq_to_ne ->  (21s)
+[162/493] survived src/vehicles/Automobile.cpp:3435 cxx_div_to_mul ->  (21s)
+[163/493] survived src/peds/PedAI.cpp:986 cxx_lt_to_le ->  (21s)
+[164/493] survived src/core/Cam.cpp:3537 cxx_le_to_lt ->  (15s)
+[165/493] survived src/peds/PedAI.cpp:3399 cxx_remove_void_call ->  (10s)
+[166/493] survived src/audio/AudioLogic.cpp:7782 cxx_lt_to_le ->  (15s)
+[167/493] survived src/control/CarCtrl.cpp:1913 cxx_mul_to_div -> no further covering runs (0s)
+[168/493] survived src/control/CarCtrl.cpp:1841 cxx_mul_to_div ->  (20s)
+[169/493] survived src/audio/AudioLogic.cpp:8644 cxx_eq_to_ne -> no further covering runs (0s)
+[170/493] survived src/peds/Ped.cpp:5177 cxx_eq_to_ne ->  (21s)
+[171/493] survived src/peds/Ped.cpp:5261 cxx_ne_to_eq ->  (20s)
+[172/493] killed src/control/CarCtrl.cpp:122 cxx_add_to_sub -> s2 seed 1: diverged:765 (6s)
+[173/493] killed src/audio/AudioLogic.cpp:6414 cxx_post_inc_to_post_dec -> s2 seed 1: diverged:778 (5s)
+[174/493] survived src/vehicles/Automobile.cpp:959 cxx_gt_to_ge ->  (20s)
+[175/493] survived src/peds/Ped.cpp:736 cxx_ne_to_eq ->  (20s)
+[176/493] survived src/core/Cam.cpp:295 cxx_eq_to_ne ->  (21s)
+[177/493] survived src/audio/AudioLogic.cpp:1406 cxx_eq_to_ne ->  (21s)
+[178/493] survived src/peds/Ped.cpp:5641 cxx_remove_void_call ->  (21s)
+[179/493] killed src/vehicles/Automobile.cpp:716 cxx_eq_to_ne -> s2 seed 1: diverged:285 (5s)
+[180/493] survived src/peds/Ped.cpp:5781 cxx_gt_to_ge ->  (9s)
+[181/493] survived src/peds/Ped.cpp:4790 cxx_remove_void_call ->  (20s)
+[182/493] survived src/control/CarCtrl.cpp:1803 cxx_mul_to_div ->  (20s)
+[183/493] survived src/control/CarCtrl.cpp:552 cxx_lt_to_le ->  (20s)
+[184/493] survived src/peds/Ped.cpp:2403 cxx_remove_void_call -> no further covering runs (0s)
+[185/493] survived src/vehicles/Automobile.cpp:4238 cxx_lt_to_ge ->  (20s)
+[186/493] survived src/control/CarCtrl.cpp:1896 cxx_ge_to_lt -> no further covering runs (0s)
+[187/493] survived src/core/Frontend.cpp:5316 cxx_remove_void_call ->  (13s)
+[188/493] survived src/audio/AudioLogic.cpp:6377 cxx_le_to_lt ->  (21s)
+[189/493] killed src/peds/PedAI.cpp:5032 cxx_minus_to_noop -> s2 seed 1: diverged:2035 (8s)
+[190/493] survived src/audio/AudioLogic.cpp:3762 cxx_lt_to_le ->  (21s)
+[191/493] killed src/vehicles/Automobile.cpp:1701 cxx_remove_void_call -> s13 seed 1: diverged:1327 (6s)
+[192/493] survived src/audio/AudioLogic.cpp:467 cxx_remove_void_call ->  (12s)
+[193/493] survived src/control/CarCtrl.cpp:2525 cxx_post_inc_to_post_dec ->  (22s)
+[194/493] killed src/vehicles/Automobile.cpp:3693 cxx_remove_void_call -> s2 seed 1: diverged:300 (5s)
+[195/493] survived src/core/Cam.cpp:463 cxx_eq_to_ne ->  (21s)
+[196/493] survived src/peds/PedAI.cpp:2058 cxx_eq_to_ne ->  (17s)
+[197/493] survived src/vehicles/Automobile.cpp:3685 cxx_eq_to_ne ->  (21s)
+[198/493] survived src/vehicles/Automobile.cpp:1137 cxx_eq_to_ne ->  (20s)
+[199/493] survived src/control/CarCtrl.cpp:1585 cxx_add_to_sub -> no further covering runs (0s)
+[200/493] survived src/core/Cam.cpp:556 cxx_sub_to_add ->  (21s)
+[201/493] survived src/core/Frontend.cpp:5801 cxx_remove_void_call ->  (15s)
+[202/493] survived src/peds/Ped.cpp:3580 cxx_ne_to_eq ->  (21s)
+[203/493] killed src/vehicles/Automobile.cpp:1999 cxx_remove_void_call -> s2 seed 2: diverged:2192 (14s)
+[204/493] survived src/control/CarCtrl.cpp:2823 cxx_gt_to_ge ->  (20s)
+[205/493] survived src/peds/Ped.cpp:7091 cxx_ne_to_eq ->  (21s)
+[206/493] killed src/peds/PedAI.cpp:2287 cxx_ne_to_eq -> s3 seed 2: diverged:875 (18s)
+[207/493] survived src/vehicles/Automobile.cpp:953 cxx_le_to_gt ->  (21s)
+[208/493] survived src/peds/Ped.cpp:4932 cxx_ne_to_eq ->  (21s)
+[209/493] survived src/vehicles/Automobile.cpp:4220 cxx_le_to_lt ->  (20s)
+[210/493] survived src/peds/PedAI.cpp:4304 cxx_gt_to_ge ->  (21s)
+[211/493] survived src/vehicles/Automobile.cpp:1154 cxx_gt_to_le ->  (20s)
+[212/493] survived src/peds/Ped.cpp:1769 cxx_remove_void_call ->  (20s)
+[213/493] survived src/core/Frontend.cpp:4934 cxx_ge_to_gt ->  (15s)
+[214/493] survived src/audio/AudioLogic.cpp:521 cxx_remove_void_call ->  (21s)
+[215/493] survived src/vehicles/Automobile.cpp:1771 cxx_gt_to_ge ->  (20s)
+[216/493] survived src/peds/Ped.cpp:6713 cxx_eq_to_ne -> no further covering runs (0s)
+[217/493] survived src/vehicles/Automobile.cpp:1632 cxx_gt_to_ge ->  (20s)
+[218/493] survived src/control/CarCtrl.cpp:1663 cxx_mul_to_div ->  (20s)
+[219/493] survived src/audio/AudioLogic.cpp:1686 cxx_gt_to_le ->  (22s)
+[220/493] survived src/core/Cam.cpp:971 cxx_gt_to_ge ->  (21s)
+[221/493] survived src/vehicles/Automobile.cpp:2109 cxx_remove_void_call ->  (21s)
+[222/493] survived src/peds/PedAI.cpp:2018 cxx_lt_to_le ->  (20s)
+[223/493] survived src/vehicles/Automobile.cpp:2395 cxx_mul_to_div -> no further covering runs (0s)
+[224/493] survived src/control/CarCtrl.cpp:122 cxx_add_to_sub ->  (21s)
+[225/493] killed src/peds/Ped.cpp:6008 cxx_gt_to_le -> s2 seed 1: diverged:573 (5s)
+[226/493] survived src/vehicles/Automobile.cpp:852 cxx_le_to_lt ->  (21s)
+[227/493] survived src/peds/Ped.cpp:3001 cxx_lt_to_le ->  (21s)
+[228/493] survived src/audio/AudioLogic.cpp:8773 cxx_mul_to_div ->  (15s)
+[229/493] survived src/core/Cam.cpp:3311 cxx_minus_to_noop ->  (17s)
+[230/493] survived src/peds/Ped.cpp:5090 cxx_remove_void_call ->  (21s)
+[231/493] survived src/control/CarCtrl.cpp:765 cxx_gt_to_ge ->  (21s)
+[232/493] killed src/peds/Ped.cpp:3648 cxx_eq_to_ne -> s3 seed 2: diverged:856 (6s)
+[233/493] survived src/control/CarCtrl.cpp:1920 cxx_mul_to_div -> no further covering runs (0s)
+[234/493] killed src/control/CarCtrl.cpp:138 cxx_eq_to_ne -> s2 seed 1: diverged:31 (4s)
+[235/493] survived src/vehicles/Automobile.cpp:1968 cxx_eq_to_ne ->  (20s)
+[236/493] survived src/core/Frontend.cpp:3826 cxx_remove_void_call ->  (21s)
+[237/493] survived src/peds/Ped.cpp:736 cxx_eq_to_ne ->  (21s)
+[238/493] survived src/vehicles/Automobile.cpp:1681 cxx_lt_to_le ->  (20s)
+[239/493] survived src/peds/PedAI.cpp:1461 cxx_ne_to_eq ->  (20s)
+[240/493] survived src/control/CarCtrl.cpp:1328 cxx_lt_to_le ->  (21s)
+[241/493] survived src/peds/Ped.cpp:6755 cxx_eq_to_ne ->  (21s)
+[242/493] survived src/peds/Ped.cpp:6834 cxx_eq_to_ne ->  (21s)
+[243/493] survived src/peds/PedAI.cpp:3433 cxx_eq_to_ne ->  (10s)
+[244/493] survived src/control/CarCtrl.cpp:1066 cxx_lt_to_le ->  (21s)
+[245/493] survived src/audio/AudioLogic.cpp:7954 cxx_lt_to_le ->  (14s)
+[246/493] survived src/peds/Ped.cpp:3239 cxx_lt_to_le ->  (19s)
+[247/493] killed src/peds/Ped.cpp:3095 cxx_ge_to_lt -> s2 seed 1: diverged:720 (5s)
+[248/493] survived src/peds/PedAI.cpp:5219 cxx_eq_to_ne -> no further covering runs (0s)
+[249/493] survived src/vehicles/Automobile.cpp:1345 cxx_gt_to_ge ->  (21s)
+[250/493] survived src/control/CarCtrl.cpp:552 cxx_mul_to_div ->  (20s)
+[251/493] killed src/vehicles/Automobile.cpp:192 cxx_eq_to_ne -> s2 seed 1: diverged:255 (5s)
+[252/493] survived src/core/Frontend.cpp:5798 cxx_remove_void_call ->  (16s)
+[253/493] survived src/peds/Ped.cpp:6769 cxx_remove_void_call -> no further covering runs (0s)
+[254/493] survived src/vehicles/Automobile.cpp:3889 cxx_remove_void_call -> no further covering runs (0s)
+[255/493] killed src/control/CarCtrl.cpp:911 cxx_le_to_lt -> s2 seed 3: diverged:449 (17s)
+[256/493] survived src/vehicles/Automobile.cpp:1527 cxx_div_to_mul ->  (20s)
+[257/493] survived src/control/CarCtrl.cpp:2823 cxx_gt_to_le ->  (20s)
+[258/493] survived src/core/Cam.cpp:3342 cxx_minus_to_noop ->  (17s)
+[259/493] survived src/core/Frontend.cpp:3982 cxx_remove_void_call -> no further covering runs (0s)
+[260/493] killed src/peds/Ped.cpp:2723 cxx_ne_to_eq -> s13 seed 3: diverged:1883 (9s)
+[261/493] survived src/peds/PedAI.cpp:1945 cxx_gt_to_le ->  (21s)
+[262/493] survived src/core/Cam.cpp:4097 cxx_mul_to_div ->  (20s)
+[263/493] survived src/vehicles/Automobile.cpp:4437 cxx_ge_to_gt ->  (21s)
+[264/493] killed src/peds/Ped.cpp:2761 cxx_gt_to_le -> s3 seed 2: diverged:977 (6s)
+[265/493] survived src/audio/AudioLogic.cpp:7878 cxx_gt_to_ge ->  (15s)
+[266/493] survived src/vehicles/Automobile.cpp:2015 cxx_remove_void_call ->  (21s)
+[267/493] survived src/peds/Ped.cpp:7164 cxx_ge_to_gt ->  (20s)
+[268/493] survived src/vehicles/Automobile.cpp:3413 cxx_gt_to_ge ->  (22s)
+[269/493] killed src/core/Cam.cpp:1671 cxx_remove_void_call -> s2 seed 1: diverged:728 (6s)
+[270/493] survived src/control/CarCtrl.cpp:2689 cxx_remove_void_call -> no further covering runs (0s)
+[271/493] survived src/audio/AudioLogic.cpp:6515 cxx_lt_to_le ->  (21s)
+[272/493] survived src/peds/Ped.cpp:7882 cxx_sub_to_add -> no further covering runs (0s)
+[273/493] survived src/peds/PedAI.cpp:2258 cxx_ne_to_eq ->  (17s)
+[274/493] survived src/vehicles/Automobile.cpp:890 cxx_eq_to_ne ->  (21s)
+[275/493] survived src/control/CarCtrl.cpp:423 cxx_mul_to_div ->  (20s)
+[276/493] survived src/vehicles/Automobile.cpp:954 cxx_ne_to_eq ->  (20s)
+[277/493] survived src/control/CarCtrl.cpp:1724 cxx_post_inc_to_post_dec -> no further covering runs (0s)
+[278/493] survived src/peds/Ped.cpp:4023 cxx_eq_to_ne ->  (21s)
+[279/493] killed src/vehicles/Automobile.cpp:3921 cxx_remove_void_call -> s6 seed 3: diverged:357 (5s)
+[280/493] survived src/peds/PedAI.cpp:1955 cxx_remove_void_call ->  (21s)
+[281/493] killed src/vehicles/Automobile.cpp:3246 cxx_ne_to_eq -> s2 seed 1: diverged:490 (5s)
+[282/493] killed src/control/CarCtrl.cpp:1227 cxx_sub_to_add -> s3 seed 2: diverged:188 (4s)
+[283/493] survived src/audio/AudioLogic.cpp:1219 cxx_eq_to_ne ->  (20s)
+[284/493] survived src/peds/Ped.cpp:7179 cxx_ne_to_eq ->  (20s)
+[285/493] survived src/peds/PedAI.cpp:2179 cxx_eq_to_ne -> no further covering runs (0s)
+[286/493] survived src/core/Frontend.cpp:3647 cxx_remove_void_call ->  (15s)
+[287/493] survived src/vehicles/Automobile.cpp:1866 cxx_gt_to_ge ->  (20s)
+[288/493] survived src/control/CarCtrl.cpp:1307 cxx_lt_to_le ->  (20s)
+[289/493] survived src/core/Frontend.cpp:3587 cxx_remove_void_call ->  (15s)
+[290/493] killed src/audio/AudioLogic.cpp:503 cxx_remove_void_call -> s2 seed 1: diverged:250 (6s)
+[291/493] survived src/peds/Ped.cpp:1311 cxx_eq_to_ne ->  (21s)
+[292/493] survived src/core/Frontend.cpp:5782 cxx_remove_void_call ->  (16s)
+[293/493] killed src/peds/Ped.cpp:7044 cxx_ne_to_eq -> s2 seed 1: diverged:777 (7s)
+[294/493] survived src/vehicles/Automobile.cpp:1999 cxx_minus_to_noop ->  (21s)
+[295/493] survived src/control/CarCtrl.cpp:1156 cxx_gt_to_ge ->  (21s)
+[296/493] survived src/vehicles/Automobile.cpp:3249 cxx_mul_to_div ->  (15s)
+[297/493] survived src/vehicles/Automobile.cpp:2143 cxx_remove_void_call ->  (20s)
+[298/493] survived src/vehicles/Automobile.cpp:1857 cxx_eq_to_ne ->  (19s)
+[299/493] survived src/control/CarCtrl.cpp:1833 cxx_add_to_sub ->  (21s)
+[300/493] survived src/core/Frontend.cpp:4969 cxx_le_to_gt -> no further covering runs (0s)
+[301/493] survived src/vehicles/Automobile.cpp:2409 cxx_eq_to_ne -> no further covering runs (0s)
+[302/493] survived src/peds/Ped.cpp:1750 cxx_lt_to_ge ->  (21s)
+[303/493] survived src/peds/PedAI.cpp:2410 cxx_ne_to_eq ->  (22s)
+[304/493] killed src/control/CarCtrl.cpp:1419 cxx_sub_to_add -> s4 seed 1: diverged:170 (11s)
+[305/493] survived src/peds/PedAI.cpp:4225 cxx_lt_to_le ->  (19s)
+[306/493] survived src/audio/AudioLogic.cpp:455 cxx_remove_void_call ->  (15s)
+[307/493] survived src/vehicles/Automobile.cpp:370 cxx_remove_void_call ->  (21s)
+[308/493] survived src/core/Frontend.cpp:3704 cxx_le_to_lt ->  (15s)
+[309/493] survived src/vehicles/Automobile.cpp:4236 cxx_sub_to_add ->  (21s)
+[310/493] killed src/control/CarCtrl.cpp:958 cxx_lt_to_ge -> s2 seed 1: diverged:1298 (6s)
+[311/493] survived src/control/CarCtrl.cpp:2397 cxx_lt_to_le ->  (20s)
+[312/493] survived src/peds/PedAI.cpp:3065 cxx_eq_to_ne ->  (23s)
+[313/493] survived src/peds/Ped.cpp:8194 cxx_eq_to_ne ->  (22s)
+[314/493] survived src/vehicles/Automobile.cpp:1844 cxx_eq_to_ne -> no further covering runs (0s)
+[315/493] survived src/peds/Ped.cpp:1855 cxx_lt_to_ge ->  (23s)
+[316/493] killed src/vehicles/Automobile.cpp:2138 cxx_remove_void_call -> s2 seed 3: diverged:866 (18s)
+[317/493] survived src/control/CarCtrl.cpp:2191 cxx_gt_to_ge -> no further covering runs (0s)
+[318/493] survived src/core/Frontend.cpp:4322 cxx_eq_to_ne ->  (16s)
+[319/493] survived src/vehicles/Automobile.cpp:2197 cxx_eq_to_ne ->  (24s)
+[320/493] survived src/control/CarCtrl.cpp:1099 cxx_gt_to_le ->  (20s)
+[321/493] survived src/core/Frontend.cpp:1362 cxx_sub_to_add -> no further covering runs (0s)
+[322/493] survived src/peds/Ped.cpp:4339 cxx_remove_void_call ->  (21s)
+[323/493] survived src/vehicles/Automobile.cpp:628 cxx_eq_to_ne ->  (23s)
+[324/493] survived src/control/CarCtrl.cpp:1098 cxx_lt_to_le ->  (21s)
+[325/493] survived src/vehicles/Automobile.cpp:1635 cxx_lt_to_ge ->  (23s)
+[326/493] survived src/peds/Ped.cpp:4941 cxx_remove_void_call ->  (21s)
+[327/493] survived src/peds/PedAI.cpp:5084 cxx_gt_to_ge -> no further covering runs (0s)
+[328/493] survived src/control/CarCtrl.cpp:671 cxx_eq_to_ne -> no further covering runs (0s)
+[329/493] survived src/audio/AudioLogic.cpp:7936 cxx_gt_to_ge ->  (15s)
+[330/493] survived src/peds/Ped.cpp:2461 cxx_div_to_mul ->  (24s)
+[331/493] survived src/vehicles/Automobile.cpp:2489 cxx_sub_to_add -> no further covering runs (0s)
+[332/493] survived src/peds/Ped.cpp:578 cxx_remove_void_call ->  (20s)
+[333/493] survived src/control/CarCtrl.cpp:981 cxx_lt_to_le ->  (21s)
+[334/493] survived src/audio/AudioLogic.cpp:346 cxx_ge_to_gt ->  (24s)
+[335/493] survived src/peds/Ped.cpp:1107 cxx_remove_void_call ->  (21s)
+[336/493] survived src/vehicles/Automobile.cpp:1886 cxx_remove_void_call ->  (21s)
+[337/493] survived src/control/CarCtrl.cpp:2664 cxx_add_to_sub ->  (20s)
+[338/493] killed src/peds/PedAI.cpp:1078 cxx_gt_to_ge -> s6 seed 3: diverged:1337 (17s)
+[339/493] survived src/vehicles/Automobile.cpp:1553 cxx_add_to_sub ->  (21s)
+[340/493] survived src/core/Cam.cpp:813 cxx_sub_to_add -> no further covering runs (0s)
+[341/493] survived src/peds/PedAI.cpp:3065 cxx_eq_to_ne ->  (21s)
+[342/493] killed src/audio/AudioLogic.cpp:1723 cxx_remove_void_call -> s2 seed 1: diverged:285 (5s)
+[343/493] killed src/peds/Ped.cpp:2084 cxx_ne_to_eq -> s5 seed 1: diverged:1811 (23s)
+[344/493] survived src/vehicles/Automobile.cpp:1078 cxx_lt_to_ge -> no further covering runs (0s)
+[345/493] survived src/peds/Ped.cpp:5453 cxx_ne_to_eq ->  (20s)
+[346/493] survived src/vehicles/Automobile.cpp:1077 cxx_eq_to_ne ->  (21s)
+[347/493] survived src/control/CarCtrl.cpp:410 cxx_lt_to_le ->  (20s)
+[348/493] survived src/core/Frontend.cpp:4934 cxx_le_to_lt ->  (17s)
+[349/493] survived src/audio/AudioLogic.cpp:8117 cxx_post_inc_to_post_dec ->  (22s)
+[350/493] survived src/control/CarCtrl.cpp:1210 cxx_lt_to_le ->  (20s)
+[351/493] killed src/peds/PedAI.cpp:2408 cxx_ne_to_eq -> s3 seed 2: diverged:2817 (21s)
+[352/493] survived src/vehicles/Automobile.cpp:3897 cxx_lt_to_le ->  (15s)
+[353/493] survived src/control/CarCtrl.cpp:889 cxx_div_to_mul -> no further covering runs (0s)
+[354/493] killed src/audio/AudioLogic.cpp:1854 cxx_eq_to_ne -> s2 seed 1: diverged:96 (8s)
+[355/493] survived src/peds/Ped.cpp:4034 cxx_gt_to_ge ->  (21s)
+[356/493] survived src/core/Cam.cpp:105 cxx_eq_to_ne ->  (22s)
+[357/493] survived src/core/Frontend.cpp:3672 cxx_remove_void_call ->  (16s)
+[358/493] survived src/audio/AudioLogic.cpp:2873 cxx_remove_void_call ->  (21s)
+[359/493] survived src/peds/Ped.cpp:2461 cxx_le_to_gt ->  (21s)
+[360/493] survived src/peds/PedAI.cpp:2024 cxx_lt_to_le ->  (20s)
+[361/493] survived src/peds/Ped.cpp:4116 cxx_le_to_lt ->  (21s)
+[362/493] survived src/core/Cam.cpp:586 cxx_ne_to_eq ->  (22s)
+[363/493] survived src/peds/PedAI.cpp:5182 cxx_remove_void_call ->  (17s)
+[364/493] survived src/vehicles/Automobile.cpp:2032 cxx_remove_void_call ->  (22s)
+[365/493] survived src/control/CarCtrl.cpp:1913 cxx_add_to_sub -> no further covering runs (0s)
+[366/493] killed src/peds/Ped.cpp:1289 cxx_eq_to_ne -> s4 seed 3: diverged:777 (17s)
+[367/493] killed src/vehicles/Automobile.cpp:2081 cxx_eq_to_ne -> s2 seed 3: diverged:866 (18s)
+[368/493] survived src/peds/Ped.cpp:4752 cxx_gt_to_le ->  (21s)
+[369/493] survived src/peds/PedAI.cpp:2140 cxx_remove_void_call ->  (22s)
+[370/493] survived src/vehicles/Automobile.cpp:955 cxx_gt_to_ge ->  (22s)
+[371/493] survived src/audio/AudioLogic.cpp:8647 cxx_eq_to_ne -> no further covering runs (0s)
+[372/493] survived src/peds/Ped.cpp:8413 cxx_remove_void_call ->  (23s)
+[373/493] survived src/vehicles/Automobile.cpp:1184 cxx_lt_to_le ->  (22s)
+[374/493] survived src/control/CarCtrl.cpp:980 cxx_ne_to_eq ->  (21s)
+[375/493] survived src/peds/Ped.cpp:3245 cxx_gt_to_le ->  (21s)
+[376/493] killed src/peds/PedAI.cpp:3606 cxx_ne_to_eq -> s8 seed 1: diverged:1605 (13s)
+[377/493] survived src/peds/Ped.cpp:1594 cxx_add_to_sub ->  (21s)
+[378/493] survived src/peds/PedAI.cpp:2177 cxx_sub_to_add -> no further covering runs (0s)
+[379/493] survived src/peds/Ped.cpp:2761 cxx_gt_to_ge ->  (23s)
+[380/493] survived src/peds/PedAI.cpp:4865 cxx_le_to_lt -> no further covering runs (0s)
+[381/493] survived src/control/CarCtrl.cpp:1586 cxx_add_to_sub -> no further covering runs (0s)
+[382/493] survived src/peds/PedAI.cpp:75 cxx_ne_to_eq ->  (22s)
+[383/493] survived src/peds/PedAI.cpp:292 cxx_eq_to_ne ->  (20s)
+[384/493] killed src/vehicles/Automobile.cpp:199 cxx_eq_to_ne -> s2 seed 1: diverged:255 (5s)
+[385/493] survived src/core/Frontend.cpp:4281 cxx_gt_to_le ->  (15s)
+[386/493] survived src/vehicles/Automobile.cpp:3511 cxx_eq_to_ne ->  (22s)
+[387/493] killed src/peds/PedAI.cpp:3925 cxx_remove_void_call -> s3 seed 1: diverged:1486 (13s)
+[388/493] survived src/control/CarCtrl.cpp:828 cxx_mul_to_div ->  (21s)
+[389/493] killed src/peds/Ped.cpp:7445 cxx_le_to_lt -> s6 seed 1: diverged:695 (12s)
+[390/493] survived src/vehicles/Automobile.cpp:953 cxx_le_to_lt ->  (21s)
+[391/493] survived src/control/CarCtrl.cpp:1322 cxx_eq_to_ne ->  (21s)
+[392/493] survived src/core/Cam.cpp:438 cxx_sub_to_add ->  (22s)
+[393/493] survived src/audio/AudioLogic.cpp:2903 cxx_add_to_sub -> no further covering runs (0s)
+[394/493] survived src/peds/Ped.cpp:1852 cxx_mul_to_div ->  (22s)
+[395/493] survived src/audio/AudioLogic.cpp:342 cxx_ge_to_lt ->  (22s)
+[396/493] killed src/control/CarCtrl.cpp:914 cxx_remove_void_call -> s2 seed 3: diverged:449 (17s)
+[397/493] survived src/peds/Ped.cpp:2075 cxx_gt_to_ge ->  (23s)
+[398/493] survived src/peds/PedAI.cpp:4303 cxx_remove_void_call ->  (23s)
+[399/493] survived src/vehicles/Automobile.cpp:4502 cxx_post_inc_to_post_dec ->  (22s)
+[400/493] survived src/peds/Ped.cpp:3720 cxx_sub_to_add ->  (22s)
+[401/493] killed src/peds/Ped.cpp:5408 cxx_ne_to_eq -> s12 seed 3: diverged:2514 (21s)
+[402/493] survived src/vehicles/Automobile.cpp:4233 cxx_ne_to_eq ->  (23s)
+[403/493] survived src/core/Cam.cpp:584 cxx_lt_to_le ->  (23s)
+[404/493] survived src/audio/AudioLogic.cpp:392 cxx_remove_void_call ->  (23s)
+[405/493] killed src/peds/Ped.cpp:256 cxx_post_inc_to_post_dec -> s2 seed 1: timeout (52s)
+[406/493] survived src/control/CarCtrl.cpp:2476 cxx_lt_to_le ->  (10s)
+[407/493] survived src/core/Cam.cpp:3302 cxx_minus_to_noop ->  (19s)
+[408/493] survived src/audio/AudioLogic.cpp:298 cxx_ge_to_lt ->  (23s)
+[409/493] killed src/vehicles/Automobile.cpp:1738 cxx_mul_to_div -> s4 seed 3: diverged:1889 (8s)
+[410/493] survived src/vehicles/Automobile.cpp:1918 cxx_add_to_sub ->  (23s)
+[411/493] survived src/peds/PedAI.cpp:3344 cxx_remove_void_call ->  (17s)
+[412/493] survived src/control/CarCtrl.cpp:937 cxx_lt_to_le ->  (23s)
+[413/493] survived src/peds/Ped.cpp:6288 cxx_remove_void_call ->  (11s)
+[414/493] survived src/vehicles/Automobile.cpp:2483 cxx_minus_to_noop -> no further covering runs (0s)
+[415/493] killed src/peds/Ped.cpp:4860 cxx_gt_to_ge -> s2 seed 3: diverged:842 (20s)
+[416/493] survived src/vehicles/Automobile.cpp:1949 cxx_eq_to_ne ->  (23s)
+[417/493] survived src/core/Cam.cpp:537 cxx_lt_to_le ->  (23s)
+[418/493] survived src/peds/PedAI.cpp:4075 cxx_eq_to_ne ->  (25s)
+[419/493] survived src/audio/AudioLogic.cpp:2841 cxx_gt_to_ge -> no further covering runs (0s)
+[420/493] survived src/peds/Ped.cpp:2890 cxx_remove_void_call ->  (24s)
+[421/493] survived src/peds/PedAI.cpp:1235 cxx_le_to_lt ->  (23s)
+[422/493] survived src/control/CarCtrl.cpp:2657 cxx_ge_to_gt ->  (23s)
+[423/493] survived src/audio/AudioLogic.cpp:2870 cxx_remove_void_call ->  (23s)
+[424/493] survived src/peds/Ped.cpp:433 cxx_gt_to_ge ->  (23s)
+[425/493] survived src/vehicles/Automobile.cpp:1447 cxx_lt_to_le ->  (23s)
+[426/493] survived src/peds/Ped.cpp:3760 cxx_add_to_sub ->  (24s)
+[427/493] survived src/peds/Ped.cpp:5040 cxx_le_to_lt ->  (23s)
+[428/493] survived src/core/Cam.cpp:511 cxx_add_to_sub ->  (24s)
+[429/493] killed src/peds/Ped.cpp:3910 cxx_add_to_sub -> s3 seed 2: diverged:1651 (8s)
+[430/493] survived src/core/Cam.cpp:4214 cxx_mul_to_div -> no further covering runs (0s)
+[431/493] survived src/peds/Ped.cpp:1593 cxx_mul_to_div ->  (23s)
+[432/493] survived src/control/CarCtrl.cpp:1726 cxx_lt_to_ge -> no further covering runs (0s)
+[433/493] survived src/audio/AudioLogic.cpp:3196 cxx_post_inc_to_post_dec -> no further covering runs (0s)
+[434/493] survived src/peds/PedAI.cpp:4122 cxx_eq_to_ne ->  (25s)
+[435/493] survived src/vehicles/Automobile.cpp:855 cxx_lt_to_le ->  (24s)
+[436/493] survived src/control/CarCtrl.cpp:2004 cxx_add_to_sub ->  (23s)
+[437/493] survived src/vehicles/Automobile.cpp:1633 cxx_gt_to_ge ->  (23s)
+[438/493] survived src/audio/AudioLogic.cpp:3094 cxx_lt_to_le -> no further covering runs (0s)
+[439/493] survived src/peds/Ped.cpp:5454 cxx_ne_to_eq ->  (23s)
+[440/493] survived src/control/CarCtrl.cpp:777 cxx_ne_to_eq ->  (9s)
+[441/493] survived src/peds/Ped.cpp:7186 cxx_lt_to_le -> no further covering runs (0s)
+[442/493] survived src/control/CarCtrl.cpp:1584 cxx_lt_to_le -> no further covering runs (0s)
+[443/493] survived src/peds/Ped.cpp:1344 cxx_eq_to_ne ->  (24s)
+[444/493] survived src/peds/Ped.cpp:343 cxx_remove_void_call ->  (23s)
+[445/493] survived src/vehicles/Automobile.cpp:1553 cxx_remove_void_call ->  (24s)
+[446/493] survived src/control/CarCtrl.cpp:1596 cxx_lt_to_le -> no further covering runs (0s)
+[447/493] survived src/core/Cam.cpp:427 cxx_lt_to_ge ->  (24s)
+[448/493] survived src/core/Cam.cpp:2308 cxx_div_to_mul ->  (24s)
+[449/493] survived src/audio/AudioLogic.cpp:8644 cxx_eq_to_ne -> no further covering runs (0s)
+[450/493] survived src/audio/AudioLogic.cpp:418 cxx_lt_to_ge ->  (23s)
+[451/493] survived src/peds/Ped.cpp:2400 cxx_lt_to_le ->  (11s)
+[452/493] survived src/vehicles/Automobile.cpp:4041 cxx_add_to_sub -> no further covering runs (0s)
+[453/493] survived src/control/CarCtrl.cpp:2594 cxx_lt_to_le ->  (23s)
+[454/493] survived src/core/Cam.cpp:122 cxx_gt_to_ge ->  (23s)
+[455/493] survived src/peds/Ped.cpp:5934 cxx_le_to_gt ->  (23s)
+[456/493] survived src/core/Frontend.cpp:4154 cxx_remove_void_call ->  (24s)
+[457/493] killed src/control/CarCtrl.cpp:1362 cxx_eq_to_ne -> s2 seed 3: diverged:416 (6s)
+[458/493] killed src/peds/Ped.cpp:6691 cxx_remove_void_call -> s2 seed 1: diverged:2765 (10s)
+[459/493] survived src/audio/AudioLogic.cpp:8408 cxx_lt_to_le ->  (23s)
+[460/493] survived src/peds/Ped.cpp:8340 cxx_remove_void_call ->  (25s)
+[461/493] survived src/vehicles/Automobile.cpp:2083 cxx_remove_void_call -> no further covering runs (0s)
+[462/493] survived src/peds/Ped.cpp:3894 cxx_gt_to_le ->  (24s)
+[463/493] survived src/vehicles/Automobile.cpp:956 cxx_lt_to_le ->  (24s)
+[464/493] survived src/vehicles/Automobile.cpp:4477 cxx_remove_void_call ->  (23s)
+[465/493] killed src/control/CarCtrl.cpp:1001 cxx_eq_to_ne -> s3 seed 2: diverged:1636 (7s)
+[466/493] survived src/audio/AudioLogic.cpp:6886 cxx_remove_void_call ->  (17s)
+[467/493] survived src/vehicles/Automobile.cpp:1218 cxx_lt_to_le ->  (24s)
+[468/493] survived src/control/CarCtrl.cpp:1840 cxx_mul_to_div ->  (23s)
+[469/493] survived src/control/CarCtrl.cpp:987 cxx_gt_to_ge ->  (22s)
+[470/493] killed src/peds/Ped.cpp:2461 cxx_le_to_gt -> s3 seed 3: diverged:2007 (8s)
+[471/493] survived src/audio/AudioLogic.cpp:1611 cxx_ne_to_eq ->  (24s)
+[472/493] survived src/peds/Ped.cpp:5496 cxx_le_to_gt ->  (24s)
+[473/493] survived src/peds/PedAI.cpp:2405 cxx_eq_to_ne ->  (24s)
+[474/493] survived src/vehicles/Automobile.cpp:1858 cxx_eq_to_ne -> no further covering runs (0s)
+[475/493] survived src/control/CarCtrl.cpp:1954 cxx_lt_to_le ->  (23s)
+[476/493] survived src/audio/AudioLogic.cpp:1583 cxx_lt_to_le ->  (23s)
+[477/493] survived src/peds/PedAI.cpp:3923 cxx_remove_void_call ->  (24s)
+[478/493] survived src/control/CarCtrl.cpp:748 cxx_mul_to_div ->  (23s)
+[479/493] survived src/peds/PedAI.cpp:2403 cxx_remove_void_call ->  (24s)
+[480/493] survived src/control/CarCtrl.cpp:1111 cxx_add_to_sub -> no further covering runs (0s)
+[481/493] survived src/control/CarCtrl.cpp:2687 cxx_lt_to_ge ->  (23s)
+[482/493] survived src/core/Cam.cpp:2406 cxx_lt_to_le ->  (23s)
+[483/493] killed src/peds/Ped.cpp:4131 cxx_ne_to_eq -> s2 seed 1: diverged:2245 (9s)
+[484/493] survived src/control/CarCtrl.cpp:1843 cxx_mul_to_div ->  (23s)
+[485/493] killed src/control/CarCtrl.cpp:912 cxx_le_to_gt -> s2 seed 3: diverged:449 (18s)
+[486/493] survived src/peds/Ped.cpp:8189 cxx_gt_to_ge ->  (23s)
+[487/493] survived src/vehicles/Automobile.cpp:4187 cxx_lt_to_le ->  (23s)
+[488/493] survived src/control/CarCtrl.cpp:965 cxx_le_to_lt ->  (23s)
+[489/493] survived src/control/CarCtrl.cpp:2687 cxx_lt_to_le ->  (22s)
+[490/493] killed src/audio/AudioLogic.cpp:2444 cxx_gt_to_ge -> s2 seed 1: diverged:348 (6s)
+[491/493] survived src/peds/Ped.cpp:3999 cxx_ne_to_eq ->  (23s)
+[492/493] survived src/control/CarCtrl.cpp:1106 cxx_eq_to_ne -> no further covering runs (0s)
+[493/493] survived src/control/CarCtrl.cpp:2817 cxx_eq_to_ne ->  (23s)
+# Mutation results (Mull profile: cxx_default + cxx_remove_void_call)
+
+| File | Killed | Survived | No coverage | Compile errors | Score | Covered score |
+| --- | --- | --- | --- | --- | --- | --- |
+| src/audio/AudioLogic.cpp | 8 | 46 | 0 | 0 | 14.8% | 14.8% |
+| src/control/CarCtrl.cpp | 15 | 91 | 0 | 0 | 14.2% | 14.2% |
+| src/core/Cam.cpp | 2 | 33 | 0 | 0 | 5.7% | 5.7% |
+| src/core/Frontend.cpp | 0 | 26 | 0 | 0 | 0.0% | 0.0% |
+| src/peds/Ped.cpp | 22 | 87 | 0 | 0 | 20.2% | 20.2% |
+| src/peds/PedAI.cpp | 7 | 49 | 0 | 0 | 12.5% | 12.5% |
+| src/vehicles/Automobile.cpp | 20 | 87 | 0 | 0 | 18.7% | 18.7% |
+| **all** | 74 | 419 | 0 | 0 | **15.0%** | **15.0%** |
+
+## Functions (covered score; ImageMagick gate: ready >= 90%, careful 75-90%, not ready < 75%)
+
+| File | Function | Killed | Survived | No coverage | Covered score | Verdict |
+| --- | --- | --- | --- | --- | --- | --- |
+| AudioLogic.cpp | cAudioManager::PreTerminateGameSpecificShutdown | 0 | 4 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessSpecial | 0 | 3 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessEntity | 1 | 2 | 0 | 33% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessBridgeOneShots | 0 | 3 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessPlayersVehicleEngine | 0 | 3 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessHelicopter | 0 | 2 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessReverb | 0 | 2 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ResetAudioLogicTimers | 1 | 1 | 0 | 50% | too few |
+| AudioLogic.cpp | cPedComments::Process | 1 | 1 | 0 | 50% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessHomeScriptObject | 0 | 2 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessPlane | 0 | 2 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessRainOnVehicle | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessVehicleDoors | 1 | 0 | 0 | 100% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessExplosions | 1 | 0 | 0 | 100% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessBoatEngine | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::SetupJumboEngineSound | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessAirBrakes | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::GetVehicleDriveWheelSkidValue | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessVehicle | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessWaterCannon | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessAirportScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessCesna | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessPedOneShots | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::PreloadMissionAudio | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessDocksScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessFires | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessVehicleEngine | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessVehicleSkidding | 1 | 0 | 0 | 100% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessFrontEnd | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessVehicleHorn | 1 | 0 | 0 | 100% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessJumbo | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::PostInitialiseGameSpecificSetup | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessPedHeadphones | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::SetupJumboFlySound | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessGarages | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessLoopingScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessVehicleOneShots | 1 | 0 | 0 | 100% | too few |
+| CarCtrl.cpp | CCarCtrl::GenerateOneRandomCar | 5 | 9 | 0 | 36% | not ready |
+| CarCtrl.cpp | CCarCtrl::PickNextNodeToChaseCar | 0 | 10 | 0 | 0% | not ready |
+| CarCtrl.cpp | CCarCtrl::SlowCarDownForPedsSectorList | 3 | 6 | 0 | 33% | not ready |
+| CarCtrl.cpp | CCarCtrl::PickNextNodeToFollowPath | 0 | 7 | 0 | 0% | not ready |
+| CarCtrl.cpp | CCarCtrl::SlowCarDownForOtherCar | 0 | 6 | 0 | 0% | not ready |
+| CarCtrl.cpp | CCarCtrl::GenerateEmergencyServicesCar | 0 | 6 | 0 | 0% | not ready |
+| CarCtrl.cpp | CCarCtrl::PickNextNodeRandomly | 0 | 6 | 0 | 0% | not ready |
+| CarCtrl.cpp | CCarCtrl::ScanForPedDanger | 3 | 1 | 0 | 75% | too few |
+| CarCtrl.cpp | CCarCtrl::TestCollisionBetween2MovingRects | 1 | 3 | 0 | 25% | too few |
+| CarCtrl.cpp | CCarCtrl::SteerAICarWithPhysicsFollowPath | 0 | 3 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::RegisterVehicleOfInterest | 0 | 3 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::WeaveForOtherCar | 1 | 2 | 0 | 33% | too few |
+| CarCtrl.cpp | CCarCtrl::WeaveThroughObjectsSectorList | 1 | 2 | 0 | 33% | too few |
+| CarCtrl.cpp | CCarCtrl::MapCouldMoveInThisArea | 0 | 3 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::PossiblyRemoveVehicle | 0 | 3 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::UpdateCarOnRails | 0 | 2 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::FindAngleToWeaveThroughTraffic | 0 | 2 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::SteerAICarWithPhysics_OnlyMission | 0 | 2 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::SlowCarOnRailsDownForTrafficAndLights | 0 | 2 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::FindLinksToGoWithTheseNodes | 0 | 2 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::Init | 0 | 2 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::UpdateCarCount | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::SlowCarDownForCarsSectorList | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::WeaveThroughCarsSectorList | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::ChoosePoliceCarModel | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::FindMaximumSpeedForThisCarInTraffic | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::SteerAICarWithPhysicsTryingToBlockTarget_Stop | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::DragCarToPoint | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::JoinCarWithRoadSystem | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::WeaveThroughPedsSectorList | 1 | 0 | 0 | 100% | too few |
+| CarCtrl.cpp | CCarCtrl::ThisRoadObjectCouldMove | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | CCam::ProcessSpecialHeightRoutines | 0 | 10 | 0 | 0% | not ready |
+| Cam.cpp | CCam::Process_BehindBoat | 0 | 6 | 0 | 0% | not ready |
+| Cam.cpp | CCam::Process_FollowPedWithMouse | 2 | 2 | 0 | 50% | too few |
+| Cam.cpp | CCam::Process | 0 | 3 | 0 | 0% | too few |
+| Cam.cpp | CCam::Process_FlyBy | 0 | 2 | 0 | 0% | too few |
+| Cam.cpp | CCam::Process_TopDownPed | 0 | 2 | 0 | 0% | too few |
+| Cam.cpp | CCam::ProcessArrestCamTwo | 0 | 2 | 0 | 0% | too few |
+| Cam.cpp | CCam::Cam_On_A_String_Unobscured | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | FindSplinePathPositionVector | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | CCam::DoAverageOnVector | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | CCam::ProcessPedsDeadBaby | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | CCam::ClipIfPedInFrontOfPlayer | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | CCam::AvoidWallsTopDownPed | 0 | 1 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::ProcessButtonPresses | 0 | 7 | 0 | 0% | not ready |
+| Frontend.cpp | CMenuManager::LoadAllTextures | 0 | 5 | 0 | 0% | not ready |
+| Frontend.cpp | CMenuManager::UnloadTextures | 0 | 4 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::Draw | 0 | 2 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::LoadController | 0 | 2 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::Process | 0 | 2 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::SwitchMenuOnAndOff | 0 | 1 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::ThingsToDoBeforeGoingBack | 0 | 1 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::LoadSettings | 0 | 1 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::PrintBriefs | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::ProcessControl | 6 | 16 | 0 | 27% | not ready |
+| Ped.cpp | CPed::SetDirectionToWalkAroundObject | 3 | 9 | 0 | 25% | not ready |
+| Ped.cpp | CPed::LookForInterestingNodes | 0 | 5 | 0 | 0% | not ready |
+| Ped.cpp | CPed::ProcessBuoyancy | 0 | 4 | 0 | 0% | too few |
+| Ped.cpp | CPed::ProcessEntityCollision | 1 | 3 | 0 | 25% | too few |
+| Ped.cpp | CPed::SeekCar | 0 | 4 | 0 | 0% | too few |
+| Ped.cpp | CPed::ScanForThreats | 0 | 3 | 0 | 0% | too few |
+| Ped.cpp | CPed::CanPedDriveOff | 0 | 3 | 0 | 0% | too few |
+| Ped.cpp | CPed::Seek | 0 | 3 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetWaitState | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::PedSetInCarCB | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::PreRender | 1 | 1 | 0 | 50% | too few |
+| Ped.cpp | CPed::Idle | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::CanPedReturnToState | 2 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::SetFlee | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::Flee | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::Avoid | 1 | 1 | 0 | 50% | too few |
+| Ped.cpp | CPed::Render | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::ScanForInterestingStuff | 1 | 1 | 0 | 50% | too few |
+| Ped.cpp | CPed::WarpPedIntoCar | 0 | 2 | 0 | 0% | too few |
+| Ped.cpp | CPed::GetLocalDirection | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::IsPointerValid | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::SetAttackTimer | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::UpdatePosition | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::IsGangMember | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::~CPed | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::SetInTheAir | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetGetUp | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetCurrentWeapon | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::LookForSexyCars | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetFall | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::PossiblyFindBetterPosToSeekCar | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::LookForSexyPeds | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::PedSetOutCarCB | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetMoveAnim | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetAimFlag | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::IsPedShootable | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::GiveWeapon | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::Wait | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::SetSeek | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::CPed | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::SetEvasiveDive | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::BuildPedLists | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::WillChat | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::Initialise | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::WanderPath | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetSeekCar | 1 | 0 | 0 | 100% | too few |
+| PedAI.cpp | CPed::ProcessObjective | 1 | 7 | 0 | 12% | not ready |
+| PedAI.cpp | CPed::PedAnimDoorOpenCB | 1 | 3 | 0 | 25% | too few |
+| PedAI.cpp | CPed::CanSeeEntity | 0 | 3 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetAnimOffsetForEnterOrExitVehicle | 0 | 3 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetEnterCar_AllClear | 1 | 2 | 0 | 33% | too few |
+| PedAI.cpp | CPed::SetObjective | 0 | 3 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetExitCar | 1 | 2 | 0 | 33% | too few |
+| PedAI.cpp | CPed::ReactToAttack | 0 | 3 | 0 | 0% | too few |
+| PedAI.cpp | CPed::GetLocalPositionToOpenCarDoor | 1 | 1 | 0 | 50% | too few |
+| PedAI.cpp | CPed::BeingDraggedFromCar | 0 | 2 | 0 | 0% | too few |
+| PedAI.cpp | CPed::ExitCar | 0 | 2 | 0 | 0% | too few |
+| PedAI.cpp | CPed::PedAnimAlignCB | 1 | 1 | 0 | 50% | too few |
+| PedAI.cpp | CPed::LineUpPedWithCar | 0 | 2 | 0 | 0% | too few |
+| PedAI.cpp | CPed::PedAnimGetInCB | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::EnterCar | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetExitBoat | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::RestorePreviousObjective | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetEnterCar | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetBeingDraggedFromCar | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::ReactToPointGun | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::IsRoomToBeCarJacked | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::GetNearestPassengerDoor | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::Duck | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetSeekBoatPosition | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::QuitEnteringCar | 1 | 0 | 0 | 100% | too few |
+| PedAI.cpp | CPed::DuckAndCover | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::ForceStoredObjective | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetCarJack_AllClear | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::GetNearestDoor | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::ProcessControl | 6 | 24 | 0 | 20% | not ready |
+| Automobile.cpp | CAutomobile::PreRender | 4 | 20 | 0 | 17% | not ready |
+| Automobile.cpp | CAutomobile::Render | 3 | 14 | 0 | 18% | not ready |
+| Automobile.cpp | CAutomobile::VehicleDamage | 1 | 6 | 0 | 14% | not ready |
+| Automobile.cpp | CAutomobile::SpawnFlyingComponent | 0 | 5 | 0 | 0% | not ready |
+| Automobile.cpp | CPed::MakeTyresMuddySectorList | 0 | 3 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::BlowUpCar | 1 | 2 | 0 | 33% | too few |
+| Automobile.cpp | CAutomobile::ProcessEntityCollision | 1 | 1 | 0 | 50% | too few |
+| Automobile.cpp | CAutomobile::OpenDoor | 1 | 1 | 0 | 50% | too few |
+| Automobile.cpp | CAutomobile::FireTruckControl | 0 | 2 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::CAutomobile | 2 | 0 | 0 | 100% | too few |
+| Automobile.cpp | CAutomobile::TankControl | 0 | 2 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::SetupSuspensionLines | 1 | 0 | 0 | 100% | too few |
+| Automobile.cpp | CAutomobile::ProcessControlInputs | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::SetDoorDamage | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | ProcessDoorOpenCloseAnimation | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CPed::DeadPedMakesTyresBloody | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::AddDamagedVehicleParticles | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::IsRoomForPedToLeaveCar | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::HasCarStoppedBecauseOfLight | 0 | 1 | 0 | 0% | too few |
+
+## Operators
+
+| Operator | Killed | Survived | No coverage | Covered score |
+| --- | --- | --- | --- | --- |
+| cxx_remove_void_call | 14 | 76 | 0 | 16% |
+| cxx_eq_to_ne | 13 | 65 | 0 | 17% |
+| cxx_lt_to_le | 1 | 63 | 0 | 2% |
+| cxx_gt_to_ge | 3 | 44 | 0 | 6% |
+| cxx_ne_to_eq | 12 | 24 | 0 | 33% |
+| cxx_mul_to_div | 2 | 30 | 0 | 6% |
+| cxx_add_to_sub | 4 | 24 | 0 | 14% |
+| cxx_le_to_lt | 2 | 18 | 0 | 10% |
+| cxx_gt_to_le | 8 | 11 | 0 | 42% |
+| cxx_lt_to_ge | 3 | 13 | 0 | 19% |
+| cxx_sub_to_add | 2 | 13 | 0 | 13% |
+| cxx_ge_to_gt | 1 | 9 | 0 | 10% |
+| cxx_le_to_gt | 3 | 6 | 0 | 33% |
+| cxx_post_inc_to_post_dec | 3 | 6 | 0 | 33% |
+| cxx_minus_to_noop | 1 | 6 | 0 | 14% |
+| cxx_div_to_mul | 0 | 6 | 0 | 0% |
+| cxx_ge_to_lt | 1 | 4 | 0 | 20% |
+| cxx_rem_to_div | 1 | 0 | 0 | 100% |
+| cxx_pre_inc_to_pre_dec | 0 | 1 | 0 | 0% |
+
+## Survivors (first 60)
+
+- src/control/CarCtrl.cpp:827 CCarCtrl::UpdateCarOnRails `*` -> `/` (cxx_mul_to_div)
+- src/peds/Ped.cpp:3505 CPed::GetLocalDirection `<` -> `<=` (cxx_lt_to_le)
+- src/peds/PedAI.cpp:2668 CPed::PedAnimGetInCB `==` -> `!=` (cxx_eq_to_ne)
+- src/core/Frontend.cpp:5315 CMenuManager::ProcessButtonPresses `-` -> `+` (cxx_sub_to_add)
+- src/peds/Ped.cpp:4023 CPed::SetDirectionToWalkAroundObject `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:1278 CCarCtrl::FindAngleToWeaveThroughTraffic `WeaveThroughObjectsSectorList(s->m_lists[ENTITYLIST_OBJECTS_` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Cam.cpp:3308 CCam::Process_BehindBoat `+` -> `-` (cxx_add_to_sub)
+- src/peds/Ped.cpp:1647 CPed::ProcessBuoyancy `>` -> `>=` (cxx_gt_to_ge)
+- src/control/CarCtrl.cpp:2191 CCarCtrl::SteerAICarWithPhysics_OnlyMission `==` -> `!=` (cxx_eq_to_ne)
+- src/peds/PedAI.cpp:2031 CPed::CanSeeEntity `<` -> `<=` (cxx_lt_to_le)
+- src/control/CarCtrl.cpp:1099 CCarCtrl::SlowCarDownForOtherCar `-` -> `+` (cxx_sub_to_add)
+- src/peds/Ped.cpp:1858 CPed::ProcessControl `<=` -> `<` (cxx_le_to_lt)
+- src/peds/Ped.cpp:7324 CPed::SetWaitState `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:915 CCarCtrl::ScanForPedDanger `SlowCarDownForPedsSectorList(s->m_lists[ENTITYLIST_PEDS_OVER` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Cam.cpp:3618 CCam::Process_FlyBy `FindSplinePathPositionFloat(&UpAngle, TheCamera.m_arrPathArr` -> `((void)0)` (cxx_remove_void_call)
+- src/peds/PedAI.cpp:4280 CPed::SetAnimOffsetForEnterOrExitVehicle `>` -> `>=` (cxx_gt_to_ge)
+- src/peds/Ped.cpp:2566 CPed::ProcessControl `+` -> `-` (cxx_add_to_sub)
+- src/control/CarCtrl.cpp:1838 CCarCtrl::PickNextNodeToChaseCar `+` -> `-` (cxx_add_to_sub)
+- src/peds/Ped.cpp:7182 CPed::LookForInterestingNodes `>=` -> `>` (cxx_ge_to_gt)
+- src/vehicles/Automobile.cpp:588 CAutomobile::ProcessControl `ProcessBuoyancy()` -> `((void)0)` (cxx_remove_void_call)
+- src/control/CarCtrl.cpp:1021 CCarCtrl::SlowCarDownForPedsSectorList `<` -> `<=` (cxx_lt_to_le)
+- src/peds/Ped.cpp:2461 CPed::ProcessControl `<=` -> `>` (cxx_le_to_gt)
+- src/control/CarCtrl.cpp:2292 CCarCtrl::SteerAICarWithPhysicsFollowPath `>` -> `>=` (cxx_gt_to_ge)
+- src/peds/Ped.cpp:2410 CPed::ProcessControl `==` -> `!=` (cxx_eq_to_ne)
+- src/peds/PedAI.cpp:3518 CPed::SetEnterCar_AllClear `==` -> `!=` (cxx_eq_to_ne)
+- src/core/Frontend.cpp:5716 CMenuManager::SwitchMenuOnAndOff `SaveINIControllerSettings()` -> `((void)0)` (cxx_remove_void_call)
+- src/audio/AudioLogic.cpp:975 cAudioManager::ProcessRainOnVehicle `>` -> `<=` (cxx_gt_to_le)
+- src/peds/PedAI.cpp:206 CPed::SetObjective `==` -> `!=` (cxx_eq_to_ne)
+- src/vehicles/Automobile.cpp:1366 CAutomobile::PreRender `>` -> `>=` (cxx_gt_to_ge)
+- src/vehicles/Automobile.cpp:1140 CAutomobile::ProcessControl `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:927 CCarCtrl::SlowCarOnRailsDownForTrafficAndLights `CCarAI::CarHasReasonToStop(pVehicle)` -> `((void)0)` (cxx_remove_void_call)
+- src/vehicles/Automobile.cpp:2103 CAutomobile::Render `mat.Translate(pos)` -> `((void)0)` (cxx_remove_void_call)
+- src/peds/Ped.cpp:5335 CPed::SetAttackTimer `>` -> `>=` (cxx_gt_to_ge)
+- src/vehicles/Automobile.cpp:1902 CAutomobile::PreRender `+` -> `-` (cxx_add_to_sub)
+- src/control/CarCtrl.cpp:2519 CCarCtrl::RegisterVehicleOfInterest `<` -> `<=` (cxx_lt_to_le)
+- src/core/Frontend.cpp:5789 CMenuManager::UnloadTextures `!=` -> `==` (cxx_ne_to_eq)
+- src/peds/PedAI.cpp:1377 CPed::ProcessObjective `<` -> `<=` (cxx_lt_to_le)
+- src/control/CarCtrl.cpp:1102 CCarCtrl::SlowCarDownForOtherCar `!=` -> `==` (cxx_ne_to_eq)
+- src/peds/Ped.cpp:7136 CPed::LookForInterestingNodes `<=` -> `<` (cxx_le_to_lt)
+- src/control/CarCtrl.cpp:2639 CCarCtrl::FindLinksToGoWithTheseNodes `<` -> `<=` (cxx_lt_to_le)
+- src/vehicles/Automobile.cpp:1984 CAutomobile::Render `mat.SetRotateX(m_aWheelRotation[CARWHEEL_REAR_RIGHT])` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Cam.cpp:594 CCam::ProcessSpecialHeightRoutines `==` -> `!=` (cxx_eq_to_ne)
+- src/audio/AudioLogic.cpp:351 cAudioManager::PreTerminateGameSpecificShutdown `DestroyEntity(m_nCollisionEntity)` -> `((void)0)` (cxx_remove_void_call)
+- src/control/CarCtrl.cpp:1293 CCarCtrl::FindAngleToWeaveThroughTraffic `<` -> `<=` (cxx_lt_to_le)
+- src/peds/Ped.cpp:752 CPed::ScanForThreats `<` -> `<=` (cxx_lt_to_le)
+- src/peds/Ped.cpp:1513 CPed::UpdatePosition `*` -> `/` (cxx_mul_to_div)
+- src/peds/PedAI.cpp:3523 CPed::SetEnterCar_AllClear `m_pMyVehicle->RegisterReference((CEntity**) &m_pMyVehicle)` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:5307 CMenuManager::ProcessButtonPresses `<` -> `>=` (cxx_lt_to_ge)
+- src/core/Cam.cpp:2181 CCam::Cam_On_A_String_Unobscured `<` -> `<=` (cxx_lt_to_le)
+- src/peds/Ped.cpp:7324 CPed::SetWaitState `==` -> `!=` (cxx_eq_to_ne)
+- src/audio/AudioLogic.cpp:2831 cAudioManager::ProcessHelicopter `<` -> `<=` (cxx_lt_to_le)
+- src/control/CarCtrl.cpp:322 CCarCtrl::GenerateOneRandomCar `>` -> `>=` (cxx_gt_to_ge)
+- src/peds/Ped.cpp:4645 CPed::PedSetInCarCB `==` -> `!=` (cxx_eq_to_ne)
+- src/core/Cam.cpp:408 CCam::ProcessSpecialHeightRoutines `<` -> `>=` (cxx_lt_to_ge)
+- src/audio/AudioLogic.cpp:2712 cAudioManager::ProcessBoatEngine `/` -> `*` (cxx_div_to_mul)
+- src/audio/AudioLogic.cpp:418 cAudioManager::ProcessReverb `++` -> `--` (cxx_post_inc_to_post_dec)
+- src/control/CarCtrl.cpp:988 CCarCtrl::SlowCarDownForPedsSectorList `+` -> `-` (cxx_add_to_sub)
+- src/core/Cam.cpp:2384 CCam::Process_TopDownPed `<=` -> `<` (cxx_le_to_lt)
+- src/core/Frontend.cpp:452 CMenuManager::ThingsToDoBeforeGoingBack `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:1914 CCarCtrl::PickNextNodeToFollowPath `+` -> `-` (cxx_add_to_sub)
+

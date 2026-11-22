@@ -1,0 +1,172 @@
+src/audio/AudioLogic.cpp: 1862 mutants, 1862 sampled
+src/peds/Ped.cpp: 2312 mutants, 2312 sampled
+src/peds/PedAI.cpp: 1437 mutants, 1437 sampled
+src/vehicles/Automobile.cpp: 2068 mutants, 2068 sampled
+src/control/CarCtrl.cpp: 1190 mutants, 1190 sampled
+src/core/Cam.cpp: 1970 mutants, 1970 sampled
+src/core/Frontend.cpp: 1511 mutants, 1511 sampled
+31 baseline runs ready
+lane 0 ready in 5s: F:\Code\refactoring_cases\gta3-mutlane0
+lane 1 ready in 5s: F:\Code\refactoring_cases\gta3-mutlane1
+lane 2 ready in 5s: F:\Code\refactoring_cases\gta3-mutlane2
+lane 3 ready in 6s: F:\Code\refactoring_cases\gta3-mutlane3
+all lanes finished (exit codes combined: 0)
+baseline check at the end: 0 of 31 not reproduced
+# Mutation results (Mull profile: cxx_default + cxx_remove_void_call)
+
+| File | Killed | Survived | No coverage | Compile errors | Score | Covered score |
+| --- | --- | --- | --- | --- | --- | --- |
+| src/audio/AudioLogic.cpp | 0 | 24 | 0 | 0 | 0.0% | 0.0% |
+| src/control/CarCtrl.cpp | 2 | 27 | 0 | 0 | 6.9% | 6.9% |
+| src/core/Cam.cpp | 0 | 28 | 0 | 0 | 0.0% | 0.0% |
+| src/core/Frontend.cpp | 15 | 125 | 0 | 0 | 10.7% | 10.7% |
+| src/peds/Ped.cpp | 6 | 21 | 0 | 0 | 22.2% | 22.2% |
+| src/peds/PedAI.cpp | 1 | 9 | 0 | 0 | 10.0% | 10.0% |
+| src/vehicles/Automobile.cpp | 0 | 9 | 0 | 0 | 0.0% | 0.0% |
+| **all** | 24 | 243 | 0 | 0 | **9.0%** | **9.0%** |
+
+## Functions (covered score; ImageMagick gate: ready >= 90%, careful 75-90%, not ready < 75%)
+
+| File | Function | Killed | Survived | No coverage | Covered score | Verdict |
+| --- | --- | --- | --- | --- | --- | --- |
+| AudioLogic.cpp | cAudioManager::ProcessMissionAudio | 0 | 6 | 0 | 0% | not ready |
+| AudioLogic.cpp | cAudioManager::ProcessLoopingScriptObject | 0 | 6 | 0 | 0% | not ready |
+| AudioLogic.cpp | cAudioManager::ProcessAirportScriptObject | 0 | 2 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessDocksScriptObject | 0 | 2 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessCrane | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessSawMillScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessFrontEnd | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessHomeScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessLaunderetteScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::PreloadMissionAudio | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessShopScriptObject | 0 | 1 | 0 | 0% | too few |
+| AudioLogic.cpp | cAudioManager::ProcessSpecial | 0 | 1 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::PickNextNodeToFollowPath | 1 | 19 | 0 | 5% | not ready |
+| CarCtrl.cpp | CCarCtrl::SlowCarDownForPedsSectorList | 1 | 3 | 0 | 25% | too few |
+| CarCtrl.cpp | CCarCtrl::SlowCarDownForOtherCar | 0 | 4 | 0 | 0% | too few |
+| CarCtrl.cpp | CCarCtrl::UpdateCarCount | 0 | 1 | 0 | 0% | too few |
+| Cam.cpp | CCam::Process_FlyBy | 0 | 13 | 0 | 0% | not ready |
+| Cam.cpp | FindSplinePathPositionVector | 0 | 8 | 0 | 0% | not ready |
+| Cam.cpp | FindSplinePathPositionFloat | 0 | 5 | 0 | 0% | not ready |
+| Cam.cpp | CCam::Process_Fixed | 0 | 2 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::Draw | 6 | 34 | 0 | 15% | not ready |
+| Frontend.cpp | CMenuManager::ProcessButtonPresses | 7 | 32 | 0 | 18% | not ready |
+| Frontend.cpp | CMenuManager::LoadAllTextures | 2 | 17 | 0 | 11% | not ready |
+| Frontend.cpp | CMenuManager::LoadController | 0 | 8 | 0 | 0% | not ready |
+| Frontend.cpp | CMenuManager::UnloadTextures | 0 | 6 | 0 | 0% | not ready |
+| Frontend.cpp | CMenuManager::DrawFrontEndNormal | 0 | 6 | 0 | 0% | not ready |
+| Frontend.cpp | CMenuManager::PrintBriefs | 0 | 4 | 0 | 0% | too few |
+| Frontend.cpp | ScreenHasOption | 0 | 3 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::Process | 0 | 3 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::SwitchMenuOnAndOff | 0 | 3 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::ThingsToDoBeforeGoingBack | 0 | 3 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::GetPreviousPageOption | 0 | 2 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::DrawFrontEnd | 0 | 2 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::RequestFrontEndShutDown | 0 | 1 | 0 | 0% | too few |
+| Frontend.cpp | CMenuManager::SaveSettings | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::MoveHeadToLook | 2 | 9 | 0 | 18% | not ready |
+| Ped.cpp | CPed::PedSetInCarCB | 0 | 4 | 0 | 0% | too few |
+| Ped.cpp | CPed::ProcessControl | 2 | 2 | 0 | 50% | too few |
+| Ped.cpp | FinishFuckUCB | 0 | 3 | 0 | 0% | too few |
+| Ped.cpp | CPed::SetDirectionToWalkAroundObject | 1 | 1 | 0 | 50% | too few |
+| Ped.cpp | CPed::FlagToDestroyWhenNextProcessed | 0 | 1 | 0 | 0% | too few |
+| Ped.cpp | CPed::~CPed | 1 | 0 | 0 | 100% | too few |
+| Ped.cpp | CPed::SeekCar | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::QuitEnteringCar | 0 | 4 | 0 | 0% | too few |
+| PedAI.cpp | CPed::PedAnimDoorOpenCB | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::ProcessObjective | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::PedAnimAlignCB | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::GetNearestPassengerDoor | 0 | 1 | 0 | 0% | too few |
+| PedAI.cpp | CPed::SetObjectiveTimer | 1 | 0 | 0 | 100% | too few |
+| PedAI.cpp | CPed::SetObjective | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::PreRender | 0 | 4 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::CAutomobile | 0 | 3 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::IsDoorReady | 0 | 1 | 0 | 0% | too few |
+| Automobile.cpp | CAutomobile::IsRoomForPedToLeaveCar | 0 | 1 | 0 | 0% | too few |
+
+## Operators
+
+| Operator | Killed | Survived | No coverage | Covered score |
+| --- | --- | --- | --- | --- |
+| cxx_remove_void_call | 7 | 75 | 0 | 9% |
+| cxx_eq_to_ne | 3 | 31 | 0 | 9% |
+| cxx_lt_to_le | 1 | 23 | 0 | 4% |
+| cxx_gt_to_ge | 0 | 17 | 0 | 0% |
+| cxx_sub_to_add | 1 | 14 | 0 | 7% |
+| cxx_ne_to_eq | 1 | 13 | 0 | 7% |
+| cxx_ge_to_gt | 2 | 11 | 0 | 15% |
+| cxx_mul_to_div | 0 | 11 | 0 | 0% |
+| cxx_gt_to_le | 0 | 11 | 0 | 0% |
+| cxx_add_to_sub | 2 | 7 | 0 | 22% |
+| cxx_lt_to_ge | 1 | 6 | 0 | 14% |
+| cxx_ge_to_lt | 2 | 4 | 0 | 33% |
+| cxx_le_to_lt | 1 | 4 | 0 | 20% |
+| cxx_le_to_gt | 2 | 3 | 0 | 40% |
+| cxx_pre_inc_to_pre_dec | 0 | 5 | 0 | 0% |
+| cxx_post_inc_to_post_dec | 1 | 3 | 0 | 25% |
+| cxx_div_to_mul | 0 | 4 | 0 | 0% |
+| cxx_minus_to_noop | 0 | 1 | 0 | 0% |
+
+## Survivors (first 60)
+
+- src/core/Frontend.cpp:1365 CMenuManager::Draw `-` -> `+` (cxx_sub_to_add)
+- src/core/Frontend.cpp:1734 CMenuManager::Draw `CFont::SetRightJustifyOff()` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:442 ScreenHasOption `==` -> `!=` (cxx_eq_to_ne)
+- src/core/Frontend.cpp:520 CMenuManager::GetPreviousPageOption `>=` -> `>` (cxx_ge_to_gt)
+- src/control/CarCtrl.cpp:1023 CCarCtrl::SlowCarDownForPedsSectorList `<` -> `<=` (cxx_lt_to_le)
+- src/core/Frontend.cpp:4969 CMenuManager::ProcessButtonPresses `<=` -> `<` (cxx_le_to_lt)
+- src/audio/AudioLogic.cpp:9011 cAudioManager::ProcessMissionAudio `>` -> `>=` (cxx_gt_to_ge)
+- src/core/Frontend.cpp:1833 CMenuManager::Draw `CFont::SetRightJustifyOff()` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:3737 CMenuManager::LoadController `<=` -> `>` (cxx_le_to_gt)
+- src/control/CarCtrl.cpp:1881 CCarCtrl::PickNextNodeToFollowPath `+` -> `-` (cxx_add_to_sub)
+- src/core/Frontend.cpp:5794 CMenuManager::UnloadTextures `++` -> `--` (cxx_pre_inc_to_pre_dec)
+- src/core/Frontend.cpp:1364 CMenuManager::Draw `!=` -> `==` (cxx_ne_to_eq)
+- src/core/Frontend.cpp:4855 CMenuManager::ProcessButtonPresses `==` -> `!=` (cxx_eq_to_ne)
+- src/peds/Ped.cpp:4476 CPed::PedSetInCarCB `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:2806 CCarCtrl::UpdateCarCount `++` -> `--` (cxx_pre_inc_to_pre_dec)
+- src/peds/PedAI.cpp:2382 CPed::PedAnimDoorOpenCB `((CAutomobile*)veh)->Damage.SetDoorStatus(door, DOOR_STATUS_` -> `((void)0)` (cxx_remove_void_call)
+- src/peds/PedAI.cpp:3597 CPed::QuitEnteringCar `RestartNonPartialAnims()` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:4345 CMenuManager::ProcessButtonPresses `<` -> `>=` (cxx_lt_to_ge)
+- src/core/Frontend.cpp:4345 CMenuManager::ProcessButtonPresses `<` -> `<=` (cxx_lt_to_le)
+- src/core/Frontend.cpp:1760 CMenuManager::Draw `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:1893 CCarCtrl::PickNextNodeToFollowPath `*` -> `/` (cxx_mul_to_div)
+- src/core/Frontend.cpp:1708 CMenuManager::Draw `+` -> `-` (cxx_add_to_sub)
+- src/control/CarCtrl.cpp:1898 CCarCtrl::PickNextNodeToFollowPath `==` -> `!=` (cxx_eq_to_ne)
+- src/peds/PedAI.cpp:1361 CPed::ProcessObjective `>=` -> `>` (cxx_ge_to_gt)
+- src/core/Cam.cpp:3616 CCam::Process_FlyBy `>=` -> `<` (cxx_ge_to_lt)
+- src/core/Frontend.cpp:1072 CMenuManager::Draw `CFont::SetJustifyOn()` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:1790 CMenuManager::Draw `!=` -> `==` (cxx_ne_to_eq)
+- src/vehicles/Automobile.cpp:1865 CAutomobile::PreRender `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:1895 CCarCtrl::PickNextNodeToFollowPath `*` -> `/` (cxx_mul_to_div)
+- src/control/CarCtrl.cpp:1917 CCarCtrl::PickNextNodeToFollowPath `*` -> `/` (cxx_mul_to_div)
+- src/control/CarCtrl.cpp:1921 CCarCtrl::PickNextNodeToFollowPath `*` -> `/` (cxx_mul_to_div)
+- src/core/Frontend.cpp:3652 CMenuManager::LoadAllTextures `++` -> `--` (cxx_post_inc_to_post_dec)
+- src/control/CarCtrl.cpp:1913 CCarCtrl::PickNextNodeToFollowPath `+` -> `-` (cxx_add_to_sub)
+- src/core/Frontend.cpp:3620 CMenuManager::LoadAllTextures `CTxdStore::AddRef(frontendTxdSlot)` -> `((void)0)` (cxx_remove_void_call)
+- src/peds/PedAI.cpp:2258 CPed::PedAnimAlignCB `!=` -> `==` (cxx_ne_to_eq)
+- src/core/Frontend.cpp:1743 CMenuManager::Draw `==` -> `!=` (cxx_eq_to_ne)
+- src/control/CarCtrl.cpp:1896 CCarCtrl::PickNextNodeToFollowPath `>=` -> `>` (cxx_ge_to_gt)
+- src/core/Cam.cpp:3505 FindSplinePathPositionFloat `<=` -> `<` (cxx_le_to_lt)
+- src/core/Cam.cpp:3547 FindSplinePathPositionVector `>` -> `>=` (cxx_gt_to_ge)
+- src/core/Frontend.cpp:5307 CMenuManager::ProcessButtonPresses `<` -> `<=` (cxx_lt_to_le)
+- src/control/CarCtrl.cpp:1100 CCarCtrl::SlowCarDownForOtherCar `-` -> `+` (cxx_sub_to_add)
+- src/audio/AudioLogic.cpp:6898 cAudioManager::ProcessLoopingScriptObject `ProcessAirportScriptObject(sound)` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:3704 CMenuManager::LoadController `<=` -> `>` (cxx_le_to_gt)
+- src/core/Frontend.cpp:1086 CMenuManager::Draw `CFont::SetRightJustifyWrap(MENU_X_LEFT_ALIGNED(MENU_X_MARGIN` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:1073 CMenuManager::Draw `CFont::SetBackGroundOnlyTextOn()` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:5313 CMenuManager::ProcessButtonPresses `>` -> `>=` (cxx_gt_to_ge)
+- src/peds/Ped.cpp:4617 CPed::PedSetInCarCB `==` -> `!=` (cxx_eq_to_ne)
+- src/core/Cam.cpp:3605 CCam::Process_FlyBy `<` -> `<=` (cxx_lt_to_le)
+- src/audio/AudioLogic.cpp:8305 cAudioManager::ProcessCrane `!=` -> `==` (cxx_ne_to_eq)
+- src/audio/AudioLogic.cpp:7764 cAudioManager::ProcessAirportScriptObject `>` -> `>=` (cxx_gt_to_ge)
+- src/core/Frontend.cpp:4322 CMenuManager::ProcessButtonPresses `==` -> `!=` (cxx_eq_to_ne)
+- src/audio/AudioLogic.cpp:7576 cAudioManager::ProcessSawMillScriptObject `<` -> `<=` (cxx_lt_to_le)
+- src/core/Frontend.cpp:3629 CMenuManager::LoadAllTextures `m_aFrontEndSprites[i].SetAddressing(rwTEXTUREADDRESSBORDER)` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Cam.cpp:3699 CCam::Process_Fixed `Up.Normalise()` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Frontend.cpp:4287 CMenuManager::Process `<` -> `>=` (cxx_lt_to_ge)
+- src/peds/Ped.cpp:7734 CPed::FlagToDestroyWhenNextProcessed `SetPedState(PED_DEAD)` -> `((void)0)` (cxx_remove_void_call)
+- src/core/Cam.cpp:3530 FindSplinePathPositionVector `<` -> `>=` (cxx_lt_to_ge)
+- src/core/Cam.cpp:3547 FindSplinePathPositionVector `>` -> `<=` (cxx_gt_to_le)
+- src/audio/AudioLogic.cpp:9011 cAudioManager::ProcessMissionAudio `>` -> `<=` (cxx_gt_to_le)
+- src/core/Cam.cpp:3532 FindSplinePathPositionVector `-` -> `+` (cxx_sub_to_add)
+
