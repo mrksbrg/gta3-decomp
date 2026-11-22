@@ -415,14 +415,22 @@ void RwIm2DVertexSetIntRGBA(RwIm2DVertex *vert, RwUInt8 red, RwUInt8 green, RwUI
 
 RwReal RwIm2DGetNearScreenZ(void) { return im2d::GetNearZ(); }
 RwReal RwIm2DGetFarScreenZ(void) { return im2d::GetFarZ(); }
+// Replay harness (src/extras/harness.cpp) sets this to hash every 2D draw; null otherwise.
+void (*gHarnessDraw2DHook)(int primType, const void *vertices, int numVertices, int vertexSize, const void *indices, int numIndices);
+#define HARNESS_DRAW2D(type, verts, n, idx, ni) if (gHarnessDraw2DHook) gHarnessDraw2DHook((int)(type), verts, n, sizeof(RwIm2DVertex), idx, ni)
+
 RwBool RwIm2DRenderLine(RwIm2DVertex *vertices, RwInt32 numVertices, RwInt32 vert1, RwInt32 vert2)
-	{ im2d::RenderLine(vertices, numVertices, vert1, vert2); return true; }
+	{ RwImVertexIndex i[2] = { (RwImVertexIndex)vert1, (RwImVertexIndex)vert2 }; HARNESS_DRAW2D(-1, vertices, numVertices, i, 2);
+	  im2d::RenderLine(vertices, numVertices, vert1, vert2); return true; }
 RwBool RwIm2DRenderTriangle(RwIm2DVertex *vertices, RwInt32 numVertices, RwInt32 vert1, RwInt32 vert2, RwInt32 vert3 )
-	{ im2d::RenderTriangle(vertices, numVertices, vert1, vert2, vert3); return true; }
+	{ RwImVertexIndex i[3] = { (RwImVertexIndex)vert1, (RwImVertexIndex)vert2, (RwImVertexIndex)vert3 }; HARNESS_DRAW2D(-2, vertices, numVertices, i, 3);
+	  im2d::RenderTriangle(vertices, numVertices, vert1, vert2, vert3); return true; }
 RwBool RwIm2DRenderPrimitive(RwPrimitiveType primType, RwIm2DVertex *vertices, RwInt32 numVertices)
-	{ im2d::RenderPrimitive((PrimitiveType)primType, vertices, numVertices); return true; }
+	{ HARNESS_DRAW2D(primType, vertices, numVertices, nil, 0);
+	  im2d::RenderPrimitive((PrimitiveType)primType, vertices, numVertices); return true; }
 RwBool RwIm2DRenderIndexedPrimitive(RwPrimitiveType primType, RwIm2DVertex *vertices, RwInt32 numVertices, RwImVertexIndex *indices, RwInt32 numIndices)
-	{ im2d::RenderIndexedPrimitive((PrimitiveType)primType, vertices, numVertices, indices, numIndices); return true; }
+	{ HARNESS_DRAW2D(primType, vertices, numVertices, indices, numIndices);
+	  im2d::RenderIndexedPrimitive((PrimitiveType)primType, vertices, numVertices, indices, numIndices); return true; }
 
 
 void RwIm3DVertexSetPos(RwIm3DVertex *vert, RwReal x, RwReal y, RwReal z) { vert->setX(x); vert->setY(y); vert->setZ(z); }

@@ -1,4 +1,5 @@
 #include "common.h"
+#include "harness.h"
 
 #include "AudioManager.h"
 #include "audio_enums.h"
@@ -660,6 +661,40 @@ cAudioManager::AddSampleToRequestedQueue()
 	bool8 bReflections;
 #endif
 
+#ifdef REPLAY_HARNESS
+	if (CHarness::IsActive()) {
+		// the request as the audio logic made it, field by field (no struct padding)
+		uint8 buf[96];
+		uint8 *p = buf;
+#define HARNESS_PUT(v) do { memcpy(p, &(v), sizeof(v)); p += sizeof(v); } while(0)
+		HARNESS_PUT(m_sQueueSample.m_nEntityIndex);
+		HARNESS_PUT(m_sQueueSample.m_nCounter);
+		HARNESS_PUT(m_sQueueSample.m_nSampleIndex);
+		HARNESS_PUT(m_sQueueSample.m_nBankIndex);
+		HARNESS_PUT(m_sQueueSample.m_bIs2D);
+		HARNESS_PUT(m_sQueueSample.m_nPriority);
+		HARNESS_PUT(m_sQueueSample.m_nFrequency);
+		HARNESS_PUT(m_sQueueSample.m_nVolume);
+		HARNESS_PUT(m_sQueueSample.m_fDistance);
+		HARNESS_PUT(m_sQueueSample.m_nLoopCount);
+#ifndef GTA_PS2
+		HARNESS_PUT(m_sQueueSample.m_nLoopStart);
+		HARNESS_PUT(m_sQueueSample.m_nLoopEnd);
+#endif
+#ifdef EXTERNAL_3D_SOUND
+		HARNESS_PUT(m_sQueueSample.m_nEmittingVolume);
+#endif
+		HARNESS_PUT(m_sQueueSample.m_fSpeedMultiplier);
+		HARNESS_PUT(m_sQueueSample.m_MaxDistance);
+		HARNESS_PUT(m_sQueueSample.m_bStatic);
+		HARNESS_PUT(m_sQueueSample.m_vecPos.x);
+		HARNESS_PUT(m_sQueueSample.m_vecPos.y);
+		HARNESS_PUT(m_sQueueSample.m_vecPos.z);
+		HARNESS_PUT(m_sQueueSample.m_bReverb);
+#undef HARNESS_PUT
+		CHarness::AddAudioRequest(buf, p - buf);
+	}
+#endif
 	if (m_sQueueSample.m_nSampleIndex < TOTAL_AUDIO_SAMPLES) {
 		finalPriority = m_sQueueSample.m_nPriority * (MAX_VOLUME - m_sQueueSample.m_nVolume);
 		sampleIndex = m_nRequestedCount[m_nActiveQueue];

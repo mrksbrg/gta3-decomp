@@ -1,6 +1,7 @@
 #ifdef _WIN32
 #define WITHWINDOWS
 #include "common.h"
+#include "harness.h"
 
 #include "CdStream.h"
 #include "MemoryMgr.h"
@@ -221,10 +222,16 @@ CdStreamRead(int32 channel, void *buffer, uint32 offset, uint32 size)
 		pChannel->bLocked = 0;
 		
 		AddToQueue(&gChannelRequestQ, channel);
-		
+
 		if ( !ReleaseSemaphore(gCdStreamSema, 1, nil) )
 			printf("Signal Sema Error\n");
-		
+
+#ifdef REPLAY_HARNESS
+		// Harness mode: finish the read now, so the order in which models arrive (and
+		// therefore which ones streaming evicts) does not depend on thread timing.
+		if ( CHarness::IsActive() )
+			CdStreamSync(channel);
+#endif
 		return STREAM_SUCCESS;
 	}
 	

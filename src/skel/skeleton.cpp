@@ -12,6 +12,7 @@
 #include "platform.h"
 #include "main.h"
 #include "MemoryHeap.h"
+#include "harness.h"
 
 static RwBool               DefaultVideoMode = TRUE;
 
@@ -150,6 +151,12 @@ rsCommandLine(RwChar *arg)
 static RwBool
 rsPreInitCommandLine(RwChar *arg)
 {
+#ifdef REPLAY_HARNESS
+	if( CHarness::ParseArg(arg) )
+	{
+		return TRUE;
+	}
+#endif
 	if( !strcmp(arg, RWSTRING("-vms")) )
 	{
 		DefaultVideoMode = FALSE;

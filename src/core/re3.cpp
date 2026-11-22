@@ -1,6 +1,7 @@
 #include <csignal>
 #define WITHWINDOWS
 #include "common.h"
+#include "harness.h"
 #if defined DETECT_JOYSTICK_MENU && defined XINPUT
 #include <xinput.h>
 #if !defined(PSAPI_VERSION) || (PSAPI_VERSION > 1)
@@ -421,6 +422,10 @@ void LoadINIControllerSettings()
 
 void SaveINIControllerSettings()
 {
+#ifdef REPLAY_HARNESS
+	if (CHarness::IsActive())
+		return; // never persist bindings changed by harness menu input
+#endif
 	for (int32 i = 0; i < MAX_CONTROLLERACTIONS; i++) {
 		char value[128] = { '\0' };
 		
@@ -576,6 +581,10 @@ bool LoadINISettings()
 
 void SaveINISettings()
 {
+#ifdef REPLAY_HARNESS
+	if (CHarness::IsActive())
+		return; // never persist the harness overrides into re3.ini
+#endif
 #ifdef IMPROVED_VIDEOMODE
 	StoreIni("VideoMode", "Width", FrontEndMenuManager.m_nPrefsWidth);
 	StoreIni("VideoMode", "Height", FrontEndMenuManager.m_nPrefsHeight);

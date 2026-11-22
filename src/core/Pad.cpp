@@ -1,5 +1,6 @@
 #define WITHDINPUT
 #include "common.h"
+#include "harness.h"
 #include "crossplatform.h"
 #include "platform.h"
 #ifdef XINPUT
@@ -1145,6 +1146,11 @@ void CPad::UpdatePads(void)
 	}
 	if (IsAffectedByController && (GetPad(0)->PCTempKeyState.CheckForInput() || GetPad(0)->PCTempMouseState.CheckForInput()))
 		IsAffectedByController = false;
+#endif
+
+#ifdef REPLAY_HARNESS
+	if ( CHarness::IsActive() )
+		CHarness::InjectInput(); // replaces keyboard, joystick and mouse input
 #endif
 
 	if ( CReplay::IsPlayingBackFromFile() )

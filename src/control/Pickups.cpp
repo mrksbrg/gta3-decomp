@@ -1,4 +1,5 @@
 #include "common.h"
+#include "harness.h"
 
 #include "main.h"
 
@@ -689,6 +690,21 @@ CPickups::Update()
 	}
 }
 
+// The glow pulse phase is taken from the entity's address. Under 64-bit ASLR that
+// changes between runs, so harness mode uses the object pool slot instead.
+#ifdef REPLAY_HARNESS
+static uintptr
+PickupPhase(CEntity *entity)
+{
+	if (CHarness::IsActive() && entity->IsObject())
+		return (uintptr)CPools::GetObjectPool()->GetJustIndex_NoFreeAssert((CObject*)entity) * 0x1A0;
+	return (uintptr)entity;
+}
+#define PICKUP_PHASE(e) PickupPhase(e)
+#else
+#define PICKUP_PHASE(e) ((uintptr)(e))
+#endif
+
 void
 CPickups::DoPickUpEffects(CEntity *entity)
 {
@@ -696,7 +712,7 @@ CPickups::DoPickUpEffects(CEntity *entity)
 		entity->bDoNotRender = CTheScripts::IsPlayerOnAMission() || CDarkel::FrenzyOnGoing() || !CGame::nastyGame;
 
 	if (!entity->bDoNotRender) {
-		float modifiedSin = 0.3f * (Sin((float)((CTimer::GetTimeInMilliseconds() + (uintptr)entity) & 0x7FF) * DEGTORAD(360.0f / 0x800)) + 1.0f);
+		float modifiedSin = 0.3f * (Sin((float)((CTimer::GetTimeInMilliseconds() + PICKUP_PHASE(entity)) & 0x7FF) * DEGTORAD(360.0f / 0x800)) + 1.0f);
 
 
 		int16 colorId;
@@ -780,7 +796,7 @@ CPickups::DoMineEffects(CEntity *entity)
 	const float MAXDIST = 20.0f;
 
 	if (dist < MAXDIST) {
-		float s = Sin((float)((CTimer::GetTimeInMilliseconds() + (uintptr)entity) & 0x1FF) * DEGTORAD(360.0f / 0x200));
+		float s = Sin((float)((CTimer::GetTimeInMilliseconds() + PICKUP_PHASE(entity)) & 0x1FF) * DEGTORAD(360.0f / 0x200));
 
 		int32 red = (MAXDIST - dist) * (0.5f * s + 0.5f) / MAXDIST * 64.0f;
 		CShadows::StoreStaticShadow((uintptr)entity, SHADOWTYPE_ADDITIVE, gpShadowExplosionTex, &pos, 2.0f, 0.0f, 0.0f, -2.0f, 0, red, 0, 0, 4.0f, 1.0f, 40.0f,
@@ -799,7 +815,7 @@ CPickups::DoMoneyEffects(CEntity *entity)
 	const float MAXDIST = 20.0f;
 
 	if (dist < MAXDIST) {
-		float s = Sin((float)((CTimer::GetTimeInMilliseconds() + (uintptr)entity) & 0x3FF) * DEGTORAD(360.0f / 0x400));
+		float s = Sin((float)((CTimer::GetTimeInMilliseconds() + PICKUP_PHASE(entity)) & 0x3FF) * DEGTORAD(360.0f / 0x400));
 
 		int32 green = (MAXDIST - dist) * (0.2f * s + 0.3f) / MAXDIST * 64.0f;
 		CShadows::StoreStaticShadow((uintptr)entity, SHADOWTYPE_ADDITIVE, gpShadowExplosionTex, &pos, 2.0f, 0.0f, 0.0f, -2.0f, 0, 0, green, 0, 4.0f, 1.0f,
@@ -818,7 +834,7 @@ CPickups::DoCollectableEffects(CEntity *entity)
 	const float MAXDIST = 14.0f;
 
 	if (dist < MAXDIST) {
-		float s = Sin((float)((CTimer::GetTimeInMilliseconds() + (uintptr)entity) & 0x7FF) * DEGTORAD(360.0f / 0x800));
+		float s = Sin((float)((CTimer::GetTimeInMilliseconds() + PICKUP_PHASE(entity)) & 0x7FF) * DEGTORAD(360.0f / 0x800));
 
 		int32 color = (MAXDIST - dist) * (0.5f * s + 0.5f) / MAXDIST * 255.0f;
 		CShadows::StoreStaticShadow((uintptr)entity, SHADOWTYPE_ADDITIVE, gpShadowExplosionTex, &pos, 2.0f, 0.0f, 0.0f, -2.0f, 0, color, color, color, 4.0f,

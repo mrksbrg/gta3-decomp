@@ -274,6 +274,7 @@ enum Config {
 #define LOAD_INI_SETTINGS // as the name suggests. fundamental for CUSTOM_FRONTEND_OPTIONS
 
 #define NO_MOVIES	// add option to disable intro videos
+#define REPLAY_HARNESS	// "-harness" command line: deterministic input-driven runs with per-frame state hash traces, requires FIX_BUGS
 
 #define EXTENDED_OFFSCREEN_DESPAWN_RANGE // Use onscreen despawn range for offscreen peds and vehicles to avoid them despawning in the distance when you look
                                          // away
@@ -496,6 +497,10 @@ enum Config {
 #if defined(GTA_PS2) && defined(EXTERNAL_3D_SOUND)
 #error EXTERNAL_3D_SOUND cannot work on PS2
 #endif
+#if defined(REPLAY_HARNESS) && (!defined(FIX_BUGS) || !defined(_WIN32) || defined(LIBRW) && !defined(RW_D3D9) || !defined(AUDIO_OAL))
+#undef REPLAY_HARNESS // the harness hooks the FIX_BUGS timer, the Windows (win.cpp) main loop and the OpenAL sample manager only
+#endif
+
 #if defined(AUDIO_REFLECTIONS) && GTA_VERSION < GTA3_PC_10
 #error AUDIO_REFLECTIONS cannot work with versions below GTA3_PC_10
 #endif
